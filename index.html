@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSERVCO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <!-- Hero Carousel with Sliding Backgrounds -->
+
+    <!-- YouTube Video Modal -->
+    <div
+      id="videoModal"
+      class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4"
+    >
+      <div class="relative w-full max-w-5xl">
+        <!-- Close Button -->
+        <button
+          id="closeVideoBtn"
+          class="absolute top-2 right-2 bg-white text-black rounded-full p-2 shadow text-xl z-10"
+        >
+          ✕
+        </button>
+        <!-- YouTube iframe -->
+        <div class="w-full aspect-[16/9] rounded-xl overflow-hidden">
+          <iframe
+            id="youtubeIframe"
+            class="w-full h-full"
+            src=""
+            title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="w-full h-[60vh] sm:h-[70vh] md:h-[70vh] overflow-hidden relative"
+      id="hero-carousel"
+      data-aos="fade-up"
+    >
+      <!-- ✅ Slide Container (Backgrounds + Data) -->
+      <div
+        id="carousel-track"
+        class="flex w-full h-full transition-transform duration-700 ease-in-out"
+      >
+        <div
+          class="min-w-full h-full bg-cover bg-center"
+          style="background-image: url('./images/HomeImg.jpg')"
+          data-title="Your Corporate Family"
+          data-subtitle="Family Deserves an"
+          data-highlight="Extraordinary"
+          data-desc="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt."
+        ></div>
+
+        <div
+          class="min-w-full h-full bg-cover bg-center"
+          style="background-image: url('./images/HomeImg.jpg')"
+          data-title="Make Memories Shine"
+          data-subtitle="Give the gift of"
+          data-highlight="Joy & Care"
+          data-desc="Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod."
+        ></div>
+
+        <div
+          class="min-w-full h-full bg-cover bg-center"
+          style="background-image: url('./images/HomeImg.jpg')"
+          data-title="Celebrate with Style"
+          data-subtitle="Discover the most"
+          data-highlight="Elegant Surprises"
+          data-desc="Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur."
+        ></div>
+      </div>
+
+      <!-- ✅ Overlay Content (Text) -->
+      <div class="absolute inset-0 flex items-center z-10 px-4 sm:px-6">
+        <div class="w-full max-w-7xl mx-auto">
+          <div class="flex items-center justify-start">
+            <div
+              class="bg-[rgba(250,231,209,0.85)] text-black p-10 sm:p-6 md:p-10 lg:p-14 xl:p-20 rounded-2xl w-full max-w-[600px]"
+            >
+              <h1
+                id="hero-title"
+                class="text-3xl sm:text-4xl md:text-5xl mb-2 text-[#EF3A6B]"
+                style="font-family: 'Waterfall', cursive"
+              >
+                <!-- Dynamic Title -->
+              </h1>
+              <h1
+                id="hero-subtitle"
+                class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-snug"
+              >
+                <!-- Dynamic Subtitle -->
+              </h1>
+              <p
+                id="hero-desc"
+                class="mb-6 text-md sm:text-base text-left text-gray-700"
+              >
+                <!-- Dynamic Description -->
+              </p>
+
+              <div class="flex flex-wrap items-center gap-4">
+                <!-- Text Button -->
+                <button
+                  class="bg-[#EF3A6B] text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl font-bold hover:bg-white hover:text-[#EF3A6B] hover:border-[#EF3A6B] border transition-all duration-300 inline-flex items-center gap-2 group text-sm sm:text-md"
+                >
+                  Explore More
+                  <img
+                    src="./images/arrow-white.svg"
+                    alt="arrow"
+                    class="w-4 h-4 sm:w-5 sm:h-5 block group-hover:hidden"
+                  />
+                  <img
+                    src="./images/arrow-pink.svg"
+                    alt="arrow hover"
+                    class="w-4 h-4 sm:w-5 sm:h-5 hidden group-hover:block"
+                  />
+                </button>
+
+                <!-- Play Button -->
+                <button
+                  id="openVideoBtn"
+                  class="rounded-full flex items-center justify-center group transition-all duration- md:ml-16"
+                >
+                  <img
+                    src="./images/play.svg"
+                    alt="play"
+                    class="w-10 h-10 sm:w-12 sm:h-12 md:w-[60px] md:h-[60px] block group-hover:hidden"
+                  />
+                  <img
+                    src="./images/play-pink.svg"
+                    alt="play pink"
+                    class="w-10 h-10 sm:w-12 sm:h-12 md:w-[60px] md:h-[60px] hidden group-hover:block"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ Navigation Arrows -->
+      <button
+        id="prevBtn"
+        class="absolute left-0 sm:left-10 lg:left-20 top-1/2 -translate-y-1/2 bg-[#FAE7D1] hover:bg-white p-2 sm:p-3 rounded-full shadow text-2xl z-20"
+      >
+        <img
+          src="./images/crousel-arrow-left.svg"
+          alt="arrow"
+          class="w-4 h-4 sm:w-5 sm:h-5"
+        />
+      </button>
+      <button
+        id="nextBtn"
+        class="absolute right-0 sm:right-10 lg:right-20 top-1/2 -translate-y-1/2 bg-[#FAE7D1] hover:bg-white p-2 sm:p-3 rounded-full shadow text-2xl z-20"
+      >
+        <img
+          src="./images/crousel-arrow-right.svg"
+          alt="arrow"
+          class="w-4 h-4 sm:w-5 sm:h-5"
+        />
+      </button>
+    </div>
+
+    <!-- About Section -->
+    <div
+      class="w-full px-4 py-12 sm:px-6 md:px-12 lg:px-20 bg-white relative overflow-hidden"
+    >
+      <!-- ✅ Decorative SVG at Bottom Right -->
+      <img
+        src="./images/about-bg-img.svg"
+        alt="Decoration"
+        class="absolute bottom-0 right-0 w-32 sm:w-40 md:w-[300px] lg:w-[400px] opacity-100 pointer-events-none select-none"
+      />
+
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center"
+      >
+        <!-- ✅ Left Side: Two Images -->
+        <div class="flex flex-wrap gap-4 justify-center hidden md:flex">
+          <img
+            src="./images/about-img1.jpg"
+            alt="Image 1"
+            class="w-[90%] max-w-[280px] h-auto object-cover rounded-lg shadow-md"
+          />
+          <img
+            src="./images/about-img2.jpg"
+            alt="Image 2"
+            class="w-[90%] max-w-[280px] h-auto object-cover rounded-lg shadow-md"
+          />
+        </div>
+
+        <!-- ✅ Right Side: Text and Button -->
+        <div class="text-left px-2">
+          <div class="relative inline-block mb-4 sm:mb-6">
+            <!-- Background Leaf SVG -->
+            <img
+              src="./images/leaf.svg"
+              alt="Leaf Background"
+              class="absolute -top-10 left-6 sm:-top-14 sm:left-10 w-20 sm:w-28 md:w-32 opacity-90 pointer-events-none select-none"
+            />
+
+            <!-- Heading Text -->
+            <h1
+              class="text-3xl sm:text-4xl text-[#EF3A6B] relative z-10"
+              style="font-family: 'Waterfall', cursive"
+            >
+              About us
+            </h1>
+          </div>
+
+          <h1 class="sm:text-2xl lg:text-4xl font-bold mb-4 leading-snug">
+            Family Deserves an
+            <span class="text-[#EF3A6B]"> Extraordinary </span> Gifts
+          </h1>
+          <p class="text-gray-600 text-md md:text-md mb-6">
+            At OSERVCO, we aim to be an extension of your enterprise, assisting
+            with the procurement of office consumables and customized business
+            gifts. <br /><br />
+            Powered by a network of over 200 vendor partners and more than 1,000
+            products across various categories and brands, OSERVCO serves as
+            your one-stop shop for all office consumable needs.
+            <br /><br />
+            With a team that brings over 30 years of expertise in enterprise
+            customer engagement and supply chain management, OSERVCO is
+            well-equipped to meet and exceed market demands.
+          </p>
+
+          <button
+            class="bg-white text-[#EF3A6B] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold border border-[#EF3A6B] hover:bg-[#EF3A6B] hover:text-white transition-all duration-300 inline-flex items-center gap-2 group text-sm sm:text-md"
+          >
+            Explore More
+
+            <!-- ✅ Pink arrow (default) -->
+            <img
+              src="./images/arrow-pink.svg"
+              alt="arrow"
+              class="w-4 h-4 sm:w-5 sm:h-5 block group-hover:hidden"
+            />
+
+            <!-- ✅ White arrow (on hover) -->
+            <img
+              src="./images/arrow-white.svg"
+              alt="arrow hover"
+              class="w-4 h-4 sm:w-5 sm:h-5 hidden group-hover:block"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- What We Do -->
+    <div
+      class="w-full bg-cover bg-center px-4 py-16 sm:px-6 md:px-10 lg:px-24"
+      style="background-image: url('./images/whatwedo.jpg')"
+    >
+      <!-- Inner Container with White Transparent Background -->
+      <div
+        class="max-w-3xl mx-auto px-1 sm:px-6 md:px-12 bg-[#F2F2F2]/90 rounded-xl shadow-md py-10 sm:py-16 text-center"
+      >
+        <!-- Waterfall Heading -->
+        <div class="relative inline-block mb-4 sm:mb-6">
+          <!-- Background Leaf SVG -->
+          <img
+            src="./images/leaf.svg"
+            alt="Leaf Background"
+            class="absolute -top-10 left-6 sm:-top-20 sm:left-10 w-20 sm:w-28 opacity-100 pointer-events-none select-none"
+          />
+
+          <!-- Heading Text -->
+          <h1
+            class="text-3xl sm:text-4xl text-[#EF3A6B] relative z-10"
+            style="font-family: 'Waterfall', cursive"
+          >
+            What We Do
+          </h1>
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="text-xl sm:text-2xl lg:text-4xl font-bold mb-4 leading-snug">
+          Family Deserves an
+          <span class="text-[#EF3A6B]"> Extraordinary </span> Gifts
+        </h1>
+
+        <!-- Paragraph -->
+        <p
+          class="text-gray-700 text-md sm:text-md md:text-md mb-6 max-w-3xl mx-auto leading-relaxed"
+        >
+          At OSERVCO, we aim to be an extension of your enterprise, assisting
+          with the procurement of office consumables and customized business
+          gifts. <br /><br />
+          Powered by a network of over 200 vendor partners and more than 1,000
+          products across various categories and brands, OSERVCO serves as your
+          one-stop shop for all office consumable needs. <br /><br />
+          With a team that brings over 30 years of expertise in enterprise
+          customer engagement and supply chain management, OSERVCO is
+          well-equipped to meet and exceed market demands.
+        </p>
+      </div>
+    </div>
+
+    <!--  Our Branding Section -->
+    <div class="w-full md:p-20 p-2 bg-white relative overflow-visible mt-10">
+      <img
+        src="./images/decoration1.svg"
+        alt="Decor Left"
+        class="absolute top-0 left-0 md:w-[400px] opacity-100 pointer-events-none z-0"
+      />
+      <img
+        src="./images/decoration2.svg"
+        alt="Decor Right"
+        class="absolute bottom-0 right-0 md:w-[200px] opacity-100 pointer-events-none z-0"
+      />
+
+      <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+        <!-- Title -->
+        <div class="relative inline-block">
+          <img
+            src="./images/leaf.svg"
+            alt="Leaf Background"
+            class="absolute -top-20 left-10 w-30 h-30 opacity-90 pointer-events-none select-none"
+          />
+          <h1
+            class="text-4xl sm:text-5xl text-[#EF3A6B] relative z-10"
+            style="font-family: 'Waterfall', cursive"
+          >
+            Our Branding
+          </h1>
+        </div>
+
+        <h1
+          class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 leading-snug max-w-2xl text-center mx-auto"
+        >
+          Family Deserves an
+          <span class="text-[#EF3A6B]"> Extraordinary </span> Gifts
+        </h1>
+
+        <p class="text-gray-600 max-w-2xl mx-auto mb-12">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad
+        </p>
+
+        <!-- ✅ Two Column Layout -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-80 items-start text-left"
+        >
+          <!-- 🔹 Left Block -->
+          <div class="relative w-full group transition-all duration-300">
+            <img
+              src="./images/branding1.jpg"
+              alt="Left Image"
+              class="w-full h-full object-cover shadow relative z-20 transition-all duration-300 group-hover:scale-[1.01]"
+            />
+            <div
+              class="bg-gray-100 group-hover:bg-white md:p-6 p-2 shadow absolute md:-bottom-60 -bottom-70 left-5 z-10 w-[90%] md:w-[100%] transition-all duration-300"
+            >
+              <h3 class="text-3xl font-semibold mb-2 text-black pt-6 md:pt-16">
+                Offistore
+              </h3>
+              <p class="text-gray-700 mb-4 text-md">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat. Ut wisi enim ad
+              </p>
+              <div class="flex justify-end">
+                <button
+                  class="text-[#EF3A6B] font-bold inline-flex items-center gap-2 group"
+                >
+                  Read More
+                  <img
+                    src="./images/arrow-pink.svg"
+                    alt="arrow"
+                    class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 🔹 Right Block -->
+          <div class="relative w-full group transition-all duration-300">
+            <img
+              src="./images/branding2.jpg"
+              alt="Right Image"
+              class="w-full h-full object-cover shadow relative z-20 transition-all duration-300 group-hover:scale-[1.01]"
+            />
+            <div
+              class="bg-gray-100 group-hover:bg-white p-6 shadow absolute md:-bottom-60 -bottom-70 left-5 z-10 w-[90%] md:w-[100%] transition-all duration-300"
+            >
+              <h3 class="text-3xl font-semibold mb-2 text-black pt-6 md:pt-16">
+                Goodiestore
+              </h3>
+              <p class="text-gray-700 mb-4 text-md">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat. Ut wisi enim ad
+              </p>
+              <div class="flex justify-end">
+                <button
+                  class="text-[#EF3A6B] font-bold inline-flex items-center gap-2 group"
+                >
+                  Read More
+                  <img
+                    src="./images/arrow-pink.svg"
+                    alt="arrow"
+                    class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🛍️ Exclusive Deal Section -->
+    <div
+      class="w-full px-4 md:p-20 md:py-10 py-12 bg-white relative overflow-visible mt-20 md:mt-60"
+    >
+      <!-- 🔹 Left Side: Big Image (Responsive Positioning) -->
+      <div
+        class="relative md:absolute top-0 left-0 w-full md:w-auto z-10 mt-40 md:mt-20"
+      >
+        <img
+          src="./images/deal.jpg"
+          alt="Promo Banner"
+          class="w-full md:h-[90vh] md:w-auto object-cover"
+        />
+      </div>
+
+      <!-- 🔸 Right Side: Content -->
+      <div class="relative z-20 max-w-7xl mx-auto px-4">
+        <div
+          class="grid grid-cols-1 md:grid-cols-1 items-center gap-8 pt-12 md:pt-0 md:pl-[700px]"
+        >
+          <div class="flex flex-col items-center text-center relative md:mt-20">
+            <!-- 🧺 Top Basket Image with Overlapping Tag -->
+            <div class="relative mb-6">
+              <img
+                src="./images/deal2.jpg"
+                alt="Amazing Gift Basket"
+                class="w-full max-w-[654px] h-auto md:h-[400px]"
+              />
+
+              <!-- ⬇️ Overlapping Tag -->
+              <span
+                class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-[#EF3A6B] text-white border-[5px] border-white font-light w-[280px] sm:w-[360px] py-4 sm:py-5 rounded-2xl text-lg sm:text-3xl tracking-wide text-center whitespace-nowrap"
+              >
+                AMAZING GIFTS
+              </span>
+            </div>
+
+            <!-- Headline -->
+            <h2 class="text-3xl sm:text-5xl font-extrabold mb-1 mt-10">
+              <span class="text-[#EF3A6B]">30%</span> OFF
+            </h2>
+            <p class="text-xl sm:text-4xl font-semibold mb-12">HOME DECOR</p>
+
+            <!-- Discover More -->
+            <button
+              class="text-md font-bold text-black hover:text-[#EF3A6B] flex items-center gap-2 transition-all"
+            >
+              Discover More
+              <img
+                src="./images/black-arrow.svg"
+                alt="arrow"
+                class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🌸 Decorative Flower BG -->
+      <img
+        src="./images/decoration3.svg"
+        alt="decor"
+        class="absolute right-0 bottom-0 w-[200px] sm:w-[400px] opacity-100 pointer-events-none select-none"
+      />
+    </div>
+
+    <!-- 📰 Our Blogs Section -->
+    <div
+      class="w-full bg-white md:p-20 p-2 md:mt-32 relative overflow-visible md:h-[80vh]"
+    >
+      <!-- ✅ Decorative SVG at Bottom Right -->
+      <img
+        src="./images/decoration-blog.svg"
+        alt="Decoration"
+        class="absolute bottom-0 left-0 w-32 sm:w-40 md:w-[300px] lg:w-[400px] opacity-100 pointer-events-none select-none"
+      />
+      <div
+        class="max-w-7xl mx-auto md:px-4 px-2 grid grid-cols-1 md:grid-cols-10 gap-8 items-start h-full"
+      >
+        <!-- 🔹 Left Section (30%) -->
+        <div class="md:col-span-3 flex flex-col justify-start h-full mt-10">
+          <!-- Waterfall Heading -->
+          <div class="relative inline-block">
+            <img
+              src="./images/leaf.svg"
+              alt="Leaf Background"
+              class="absolute -top-20 left-15 w-30 h-30 opacity-90 pointer-events-none select-none"
+            />
+            <h1
+              class="text-4xl sm:text-5xl text-[#EF3A6B] relative z-10 mb-4"
+              style="font-family: 'Waterfall', cursive"
+            >
+              Our Blogs
+            </h1>
+          </div>
+          <h1
+            class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 leading-snug"
+          >
+            Tips & <span class="text-[#EF3A6B]"> Article </span>
+          </h1>
+          <p class="text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+            volutpat. Ut wisi enim ad minim
+          </p>
+          <button
+            class="w-fit bg-[#EF3A6B] text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#EF3A6B] border border-[#EF3A6B] transition-all duration-300 inline-flex items-center gap-2 group"
+          >
+            View All Blogs
+            <img
+              src="./images/arrow-white.svg"
+              alt="arrow"
+              class="w-4 h-4 block group-hover:hidden"
+            />
+            <img
+              src="./images/arrow-pink.svg"
+              alt="arrow hover"
+              class="w-4 h-4 hidden group-hover:block"
+            />
+          </button>
+        </div>
+
+        <!-- 🔸 Right Section (Blog Carousel) -->
+        <div class="md:col-span-7 relative overflow-hidden">
+          <!-- Carousel Outer -->
+          <div class="w-full overflow-hidden">
+            <!-- Carousel Inner -->
+            <div
+              id="blogCarousel"
+              class="flex transition-transform duration-500 ease-in-out"
+            >
+              <!-- Slide 1 -->
+              <div class="min-w-full px-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <!-- Blog 1 -->
+                  <div class="flex flex-col gap-1">
+                    <img
+                      src="./images/blog1.jpg"
+                      class="w-full h-50 object-cover shadow"
+                    />
+                    <div class="pt-5 flex flex-col gap-4">
+                      <h3 class="text-2xl font-semibold text-black">
+                        Decorate Your Cakes With Flowers to Make Them Elegant
+                      </h3>
+                      <p class="text-black text-md">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+                        dolore magna aliquam erat volutpat.
+                      </p>
+                      <button
+                        class="text-[#EF3A6B] font-medium inline-flex items-center gap-2 group mt-auto"
+                      >
+                        Read More
+                        <img
+                          src="./images/arrow-pink.svg"
+                          class="w-6 h-6 group-hover:translate-x-1 transition"
+                        />
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Blog 2 -->
+                  <div class="flex flex-col gap-1 hidden md:block">
+                    <img
+                      src="./images/blog2.jpg"
+                      class="w-full h-50 object-cover shadow"
+                    />
+                    <div class="pt-5 flex flex-col gap-4">
+                      <h3 class="text-2xl font-semibold text-black">
+                        Decorate Your Cakes With Flowers to Make Them Elegant
+                      </h3>
+                      <p class="text-black text-md">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+                        dolore magna aliquam erat volutpat.
+                      </p>
+                      <button
+                        class="text-[#EF3A6B] font-medium inline-flex items-center gap-2 group mt-auto"
+                      >
+                        Read More
+                        <img
+                          src="./images/arrow-pink.svg"
+                          class="w-6 h-6 group-hover:translate-x-1 transition"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="min-w-full px-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <!-- Blog 3 -->
+                  <div class="flex flex-col gap-1">
+                    <img
+                      src="./images/blog1.jpg"
+                      class="w-full h-50 object-cover shadow"
+                    />
+                    <div class="pt-5 flex flex-col gap-4">
+                      <h3 class="text-2xl font-semibold text-black">
+                        Decorate Your Cakes With Flowers to Make Them Elegant
+                      </h3>
+                      <p class="text-black text-md">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+                        dolore magna aliquam erat volutpat.
+                      </p>
+                      <button
+                        class="text-[#EF3A6B] font-medium inline-flex items-center gap-2 group mt-auto"
+                      >
+                        Read More
+                        <img
+                          src="./images/arrow-pink.svg"
+                          class="w-6 h-6 group-hover:translate-x-1 transition"
+                        />
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Blog 4 -->
+                  <div class="flex flex-col gap-1 hidden md:block">
+                    <img
+                      src="./images/blog2.jpg"
+                      class="w-full h-50 object-cover shadow"
+                    />
+                    <div class="pt-5 flex flex-col gap-4">
+                      <h3 class="text-2xl font-semibold text-black">
+                        Decorate Your Cakes With Flowers to Make Them Elegant
+                      </h3>
+                      <p class="text-black text-md">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+                        dolore magna aliquam erat volutpat.
+                      </p>
+                      <button
+                        class="text-[#EF3A6B] font-medium inline-flex items-center gap-2 group mt-auto"
+                      >
+                        Read More
+                        <img
+                          src="./images/arrow-pink.svg"
+                          class="w-6 h-6 group-hover:translate-x-1 transition"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arrows -->
+          <button
+            id="prevSlide"
+            class="absolute left-0 top-1/3 -translate-y-1/3 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full z-20 shadow hover:bg-[#EF3A6B] transition"
+          >
+            <img src="./images/crousel-arrow-left.svg" />
+          </button>
+          <button
+            id="nextSlide"
+            class="absolute right-0 top-1/3 -translate-y-1/2 bg-white/70 w-10 h-10 flex items-center justify-center rounded-full z-20 shadow hover:bg-[#EF3A6B] transition"
+          >
+            <img src="./images/crousel-arrow-right.svg" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📬 Newsletter Subscription Section -->
+    <div class="w-full bg-white relative overflow-visible px-4 py-6 md:mt-5">
+      <!-- Wrapper for left & right aligned content -->
+      <div
+        class="max-w-7xl mx-auto h-full flex flex-col md:flex-row items-start md:items-center relative z-10"
+      >
+        <!-- 🔹 Left Section (60%) -->
+        <div
+          class="w-full md:w-[50%] h-auto md:h-[300px] flex flex-col justify-between gap-6 z-20 md:pr-10"
+        >
+          <div>
+            <h2
+              class="text-3xl sm:text-4xl md:text-4xl font-bold text-black leading-tight"
+            >
+              Subscribe to Our <br />
+              <span class="text-[#EF3A6B]">Newsletter</span>
+            </h2>
+            <p class="text-gray-700 text-md sm:text-lg mt-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Blanditiis, atque.
+            </p>
+          </div>
+
+          <!-- Input Field with Button -->
+          <div class="relative mt-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="w-full py-4 pl-5 pr-32 rounded-xl border border-[#EF3A6B] focus:outline-none focus:ring-2 focus:ring-[#EF3A6B] text-gray-700"
+            />
+            <button
+              class="absolute top-1/2 right-4 transform -translate-y-1/2 text-black font-semibold flex items-center gap-2 hover:text-[#c72d5a] transition-all"
+            >
+              Subscribe
+              <img src="./images/black-arrow.svg" alt="arrow" class="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🔸 Right Carousel Section -->
+      <div
+        class="w-full md:w-[50%] mt-8 md:mt-0 md:absolute top-1/2 right-0 -translate-y-0 md:-translate-y-1/2 overflow-x-auto overflow-y-hidden z-0 scrollbar-hide pr-4"
+      >
+        <div class="flex h-[300px] animate-carousel whitespace-nowrap">
+          <img
+            src="./images/product1.jpg"
+            class="h-[300px] object-cover mx-2"
+          />
+          <img
+            src="./images/product2.jpg"
+            class="h-[300px] object-cover mx-2"
+          />
+          <img
+            src="./images/product3.jpg"
+            class="h-[300px] object-cover mx-2"
+          />
+          <img
+            src="./images/product4.jpg"
+            class="h-[300px] object-cover mx-2"
+          />
+          <img
+            src="./images/product1.jpg"
+            class="h-[300px] object-cover mx-2"
+          />
+          <img
+            src="./images/product2.jpg"
+            class="h-[300px] object-cover mx-2"
+          />
+          <img
+            src="./images/product3.jpg"
+            class="h-[300px] object-cover mx-2"
+          />
+          <img
+            src="./images/product4.jpg"
+            class="h-[300px] object-cover mx-2"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="footer" class="pt-20"></div>
+
+    <script src="script.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  </body>
+</html>

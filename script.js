@@ -18,6 +18,24 @@ document.addEventListener("DOMContentLoaded", () => {
       once: true,
       duration: 1000,
     });
+  const menuToggle = document.getElementById('menu-toggle');
+  const sidebar = document.getElementById('sidebar');
+  const closeSidebar = document.getElementById('close-sidebar');
+  const overlay = document.getElementById('overlay');
+
+  menuToggle.addEventListener('click', () => {
+    sidebar.classList.remove('translate-x-full');
+    overlay.classList.remove('hidden');
+  });
+
+  function closeMenu() {
+    sidebar.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+  }
+
+  closeSidebar.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
 
     // ✅ HERO CAROUSEL
     const track = document.getElementById("carousel-track");

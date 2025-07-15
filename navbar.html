@@ -1,48 +1,105 @@
 <!-- ✅ NAVIGATION -->
-<nav class="text-black px-6 py-4 max-w-7xl mx-auto">
-  <!-- Top: Centered Logo -->
-  <div class="flex justify-center mb-3">
+<nav class="text-black px-6 py-4 max-w-7xl mx-auto relative">
+  <!-- Top: Logo + Hamburger -->
+  <div
+    class="flex justify-between md:justify-center items-center mb-3 relative mt-4"
+  >
+    <!-- Logo -->
     <img src="./images/logo.svg" alt="Logo" class="h-6" />
+
+    <!-- Hamburger for Mobile -->
+    <button
+      id="menu-toggle"
+      class="md:hidden flex flex-col gap-1 absolute right-0"
+    >
+      <span class="w-6 h-0.5 bg-black"></span>
+      <span class="w-6 h-0.5 bg-black"></span>
+      <span class="w-6 h-0.5 bg-black"></span>
+    </button>
   </div>
 
-  <!-- Bottom: Icons, Navigation, Button -->
+  <!-- Desktop Bottom Section -->
   <div
-    class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 border-0 pb-2 border-b-2 border-dotted border-[#D9D9D9]"
+    class="hidden md:flex flex-col md:flex-row justify-between items-center gap-4 border-0 pb-2 border-b-2 border-dotted border-[#D9D9D9]"
   >
-    <!-- Left: Social Icons with Hover Effect -->
+    <!-- Social Icons -->
     <div class="flex gap-4">
       <!-- LinkedIn -->
       <a href="#" class="group relative w-6 h-6">
-        <img src="./images/linkdln-black.svg" alt="LinkedIn" class="absolute inset-0 group-hover:hidden" />
-        <img src="./images/linkdln-hover.svg" alt="LinkedIn Hover" class="absolute inset-0 hidden group-hover:block" />
+        <img
+          src="./images/linkdln-black.svg"
+          alt="LinkedIn"
+          class="absolute inset-0 group-hover:hidden"
+        />
+        <img
+          src="./images/linkdln-hover.svg"
+          alt="LinkedIn Hover"
+          class="absolute inset-0 hidden group-hover:block"
+        />
       </a>
       <!-- Instagram -->
       <a href="#" class="group relative w-6 h-6">
-        <img src="./images/insta-black.svg" alt="Instagram" class="absolute inset-0 group-hover:hidden" />
-        <img src="./images/insta-hover.svg" alt="Instagram Hover" class="absolute inset-0 hidden group-hover:block" />
+        <img
+          src="./images/insta-black.svg"
+          alt="Instagram"
+          class="absolute inset-0 group-hover:hidden"
+        />
+        <img
+          src="./images/insta-hover.svg"
+          alt="Instagram Hover"
+          class="absolute inset-0 hidden group-hover:block"
+        />
       </a>
       <!-- Facebook -->
       <a href="#" class="group relative w-6 h-6">
-        <img src="./images/fb-black.svg" alt="Facebook" class="absolute inset-0 group-hover:hidden" />
-        <img src="./images/fb-hover.svg" alt="Facebook Hover" class="absolute inset-0 hidden group-hover:block" />
+        <img
+          src="./images/fb-black.svg"
+          alt="Facebook"
+          class="absolute inset-0 group-hover:hidden"
+        />
+        <img
+          src="./images/fb-hover.svg"
+          alt="Facebook Hover"
+          class="absolute inset-0 hidden group-hover:block"
+        />
       </a>
       <!-- YouTube -->
       <a href="#" class="group relative w-6 h-6">
-        <img src="./images/yt-black.svg" alt="YouTube" class="absolute inset-0 group-hover:hidden" />
-        <img src="./images/yt-hover.svg" alt="YouTube Hover" class="absolute inset-0 hidden group-hover:block" />
+        <img
+          src="./images/yt-black.svg"
+          alt="YouTube"
+          class="absolute inset-0 group-hover:hidden"
+        />
+        <img
+          src="./images/yt-hover.svg"
+          alt="YouTube Hover"
+          class="absolute inset-0 hidden group-hover:block"
+        />
       </a>
     </div>
 
-    <!-- Center: Navigation Links -->
+    <!-- Navigation Links -->
     <ul class="flex flex-wrap justify-center gap-10 text-md font-semibold">
-      <li><a href="#" class="hover:text-[#EF3A6B] transition-colors">HOME</a></li>
-      <li><a href="#" class="hover:text-[#EF3A6B] transition-colors">ABOUT</a></li>
-      <li><a href="#" class="hover:text-[#EF3A6B] transition-colors">OFF STORE</a></li>
-      <li><a href="#" class="hover:text-[#EF3A6B] transition-colors">GOODIESSTORE</a></li>
-      <li><a href="#" class="hover:text-[#EF3A6B] transition-colors">CONTACT</a></li>
+      <li>
+        <a href="#" class="hover:text-[#EF3A6B] transition-colors">HOME</a>
+      </li>
+      <li>
+        <a href="#" class="hover:text-[#EF3A6B] transition-colors">ABOUT</a>
+      </li>
+      <li>
+        <a href="#" class="hover:text-[#EF3A6B] transition-colors">OFF STORE</a>
+      </li>
+      <li>
+        <a href="#" class="hover:text-[#EF3A6B] transition-colors"
+          >GOODIESSTORE</a
+        >
+      </li>
+      <li>
+        <a href="#" class="hover:text-[#EF3A6B] transition-colors">CONTACT</a>
+      </li>
     </ul>
 
-    <!-- Right: Button -->
+    <!-- Button -->
     <div>
       <button
         class="border border-[#D9D9D9] px-4 py-2 rounded font-bold hover:bg-white hover:text-[#EF3A6B] hover:border-[#EF3A6B] transition-colors"
@@ -51,33 +108,51 @@
       </button>
     </div>
   </div>
-</nav>
 
-<!-- ✅ CIRCULAR IMAGE SECTION -->
-<div class="max-w-5xl mx-auto px-4 py-8 hidden md:block">
-  <div class="flex justify-center md:justify-between flex-wrap gap-6">
-    <!-- Items (same styling, just responsive spacing) -->
-    <div class="flex flex-col items-center w-[140px] sm:w-[155px]">
-      <img src="./images/home.svg" alt="Home" class="w-full h-[140px] sm:h-[155px] rounded-full border-2 border-gray-300 object-cover transition-transform duration-300 hover:scale-105 hover:border-[#EF3A6B]" />
-      <span class="mt-2 text-md font-semibold">HOME</span>
-    </div>
-    <div class="flex flex-col items-center w-[140px] sm:w-[155px]">
-      <img src="./images/about.svg" alt="About" class="w-full h-[140px] sm:h-[155px] rounded-full border-2 border-gray-300 object-cover transition-transform duration-300 hover:scale-105 hover:border-[#EF3A6B]" />
-      <span class="mt-2 text-md font-semibold">ABOUT</span>
-    </div>
-    <div class="flex flex-col items-center w-[140px] sm:w-[155px]">
-      <img src="./images/offstore.svg" alt="Offstore" class="w-full h-[140px] sm:h-[155px] rounded-full border-2 border-gray-300 object-cover transition-transform duration-300 hover:scale-105 hover:border-[#EF3A6B]" />
-      <span class="mt-2 text-md font-semibold">OFFSTORE</span>
-    </div>
-    <div class="flex flex-col items-center w-[140px] sm:w-[155px]">
-      <img src="./images/goodiesstore.svg" alt="Goodstore" class="w-full h-[140px] sm:h-[155px] rounded-full border-2 border-gray-300 object-cover transition-transform duration-300 hover:scale-105 hover:border-[#EF3A6B]" />
-      <span class="mt-2 text-md font-semibold">GOODIESSTORE</span>
-    </div>
-    <div class="flex flex-col items-center w-[140px] sm:w-[155px]">
-      <img src="./images/contact.svg" alt="Contact" class="w-full h-[140px] sm:h-[155px] rounded-full border-2 border-gray-300 object-cover transition-transform duration-300 hover:scale-105 hover:border-[#EF3A6B]" />
-      <span class="mt-2 text-md font-semibold">CONTACT</span>
+  <!-- ✅ Overlay Background -->
+  <div
+    id="overlay"
+    class="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 hidden md:hidden"
+  ></div>
+
+  <!-- ✅ Sidebar -->
+  <div
+    id="sidebar"
+    class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 flex flex-col p-6 space-y-6 md:hidden"
+  >
+    <button id="close-sidebar" class="self-end text-5xl font-bold">
+      &times;
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <ul class="space-y-4 text-lg font-semibold">
+      <li><a href="#" class="hover:text-[#EF3A6B]">HOME</a></li>
+      <li><a href="#" class="hover:text-[#EF3A6B]">ABOUT</a></li>
+      <li><a href="#" class="hover:text-[#EF3A6B]">OFF STORE</a></li>
+      <li><a href="#" class="hover:text-[#EF3A6B]">GOODIESSTORE</a></li>
+      <li><a href="#" class="hover:text-[#EF3A6B]">CONTACT</a></li>
+    </ul>
+
+      <button
+        class="border border-[#8F8D8DFF] px-4 py-2 rounded font-bold hover:bg-white hover:text-[#EF3A6B] hover:border-[#EF3A6B] transition-colors"
+      >
+        Get in Touch
+      </button>
+    
+    <!-- Sidebar Social Icons -->
+    <div class="flex gap-4 mt-auto bottom-10 absolute">
+      <a href="#" class="w-8 h-8"
+        ><img src="./images/linkdln-black.svg" alt="LinkedIn"
+      /></a>
+      <a href="#" class="w-8 h-8"
+        ><img src="./images/insta-black.svg" alt="Instagram"
+      /></a>
+      <a href="#" class="w-8 h-8"
+        ><img src="./images/fb-black.svg" alt="Facebook"
+      /></a>
+      <a href="#" class="w-8 h-8"
+        ><img src="./images/yt-black.svg" alt="YouTube"
+      /></a>
     </div>
   </div>
-</div>
-
-
+</nav>

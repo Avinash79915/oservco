@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSERVCO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div
+      class="w-full h-[60vh] sm:h-[70vh] md:h-[70vh] overflow-hidden relative"
+      id="hero-carousel"
+    >
+      <!-- ✅ Single Slide Background -->
+      <div
+        class="w-full h-full bg-cover bg-center"
+        style="background-image: url('./images/HomeImg.jpg')"
+      ></div>
+
+      <!-- ✅ Overlay Content -->
+      <div class="absolute inset-0 flex items-end z-10 px-4 sm:px-6">
+        <div
+          class="w-full max-w-7xl mx-auto flex items-center justify-start mb-8"
+        >
+          <div
+            class="bg-[rgba(250,231,209,0.85)] text-black py-8 px-10 rounded-2xl w-auto"
+          >
+            <h1
+              id="hero-subtitle"
+              class="text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-snug"
+            >
+              Contact Us
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full px-4 py-16 bg-white flex justify-center">
+      <div
+        class="max-w-7xl w-full flex flex-col md:flex-row gap-12 md:h-[550px]"
+      >
+        <!-- ✅ Left Card (40%) -->
+        <div
+          class="bg-white rounded-2xl shadow-lg p-8 md:w-[40%] w-full flex flex-col justify-between"
+        >
+          <!-- Heading -->
+          <h2 class="text-3xl font-bold text-black">Get in Touch</h2>
+
+          <!-- Paragraph -->
+          <p class="text-gray-600 text-md">
+            Feel free to contact us for any queries. We're happy to assist you!
+          </p>
+
+          <!-- Dropdown -->
+          <select
+            class="p-3 border text-black w-[70%] focus:outline-none focus:ring-2 focus:ring-[#EF3A6B]"
+          >
+            <option>Select Location</option>
+            <option>Bangalore</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+          </select>
+
+          <!-- Contact Info -->
+          <div class="space-y-4 pt-4 text-gray-700">
+            <!-- Location -->
+            <div class="flex items-start gap-3">
+              <img src="./images/location.svg" alt="Location" class="w-6 h-6" />
+              <div>
+                <p class="text-md">
+                  #First Floor, 1, 3rd Cross Rd, behind Kalyani Motors, Lal Bagh
+                  Road, K.S. Garden, Sudhama Nagar, Bengaluru, Karnataka 560027
+                </p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-center gap-3">
+              <img src="./images/phone.svg" alt="Phone" class="w-6 h-6" />
+              <p class="text-md">+91 88386 58853 / 91500 00928</p>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-center gap-3">
+              <img src="./images/mail.svg" alt="Mail" class="w-6 h-6" />
+              <p class="text-md">support@offistor.com</p>
+            </div>
+          </div>
+
+          <!-- Follow Us -->
+          <p class="pt-6 text-lg font-semibold text-[#EF3A6B]">Follow Us</p>
+          <hr class="w-12 h-[2px] bg-gray-300 rounded-full mb-4" />
+
+          <!-- Social Icons -->
+          <div class="flex gap-4">
+            <!-- LinkedIn -->
+            <a href="#" class="group relative w-6 h-6">
+              <img
+                src="./images/linkdln-black.svg"
+                alt="LinkedIn"
+                class="absolute inset-0 group-hover:hidden"
+              />
+              <img
+                src="./images/linkdln-hover.svg"
+                alt="LinkedIn Hover"
+                class="absolute inset-0 hidden group-hover:block"
+              />
+            </a>
+            <!-- Instagram -->
+            <a href="#" class="group relative w-6 h-6">
+              <img
+                src="./images/insta-black.svg"
+                alt="Instagram"
+                class="absolute inset-0 group-hover:hidden"
+              />
+              <img
+                src="./images/insta-hover.svg"
+                alt="Instagram Hover"
+                class="absolute inset-0 hidden group-hover:block"
+              />
+            </a>
+            <!-- Facebook -->
+            <a href="#" class="group relative w-6 h-6">
+              <img
+                src="./images/fb-black.svg"
+                alt="Facebook"
+                class="absolute inset-0 group-hover:hidden"
+              />
+              <img
+                src="./images/fb-hover.svg"
+                alt="Facebook Hover"
+                class="absolute inset-0 hidden group-hover:block"
+              />
+            </a>
+            <!-- YouTube -->
+            <a href="#" class="group relative w-6 h-6">
+              <img
+                src="./images/yt-black.svg"
+                alt="YouTube"
+                class="absolute inset-0 group-hover:hidden"
+              />
+              <img
+                src="./images/yt-hover.svg"
+                alt="YouTube Hover"
+                class="absolute inset-0 hidden group-hover:block"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- ✅ Right Map (60%) -->
+        <div
+          class="rounded-2xl overflow-hidden shadow-lg md:w-[60%] w-full h-[300px] md:h-auto"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27991466286!2d-74.2598656459248!3d40.6976700687711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQxJzUyLjYiTiA3NMKwMTUnMTYuMCJX!5e0!3m2!1sen!2sin!4v1616627313583!5m2!1sen!2sin"
+            class="w-full h-full border-0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full px-4 py-16 bg-white">
+      <div class="max-w-4xl mx-auto space-y-8">
+        <!-- Heading -->
+        <h2 class="text-4xl font-bold text-black text-center">
+          Send Us Message
+        </h2>
+
+        <!-- Paragraph -->
+        <p class="text-gray-600 text-center max-w-3xl mx-auto">
+          We'd love to hear from you! Fill out the form below and we’ll get back
+          to you as soon as possible.
+        </p>
+
+        <!-- Form -->
+        <form class="space-y-6">
+          <!-- ✅ First 2 Columns Row -->
+          <div class="flex flex-col md:flex-row gap-6">
+            <input
+              type="text"
+              placeholder="First Name"
+              class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-[#EF3A6B] focus:outline-none"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-[#EF3A6B] focus:outline-none"
+              required
+            />
+          </div>
+
+          <!-- ✅ Second 2 Columns Row -->
+          <div class="flex flex-col md:flex-row gap-6">
+            <input
+              type="email"
+              placeholder="Email"
+              class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-[#EF3A6B] focus:outline-none"
+              required
+            />
+            <input
+              type="tel"
+              placeholder="Phone"
+              class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-[#EF3A6B] focus:outline-none"
+              required
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="subject"
+            class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-[#EF3A6B] focus:outline-none"
+            required
+          />
+          <!-- ✅ Message Full Width -->
+          <textarea
+            placeholder="Your Message"
+            rows="6"
+            class="w-full p-4 border rounded-xl focus:ring-2 focus:ring-[#EF3A6B] focus:outline-none resize-none"
+            required
+          ></textarea>
+
+          <!-- ✅ Submit Button -->
+          <button
+            type="submit"
+            class="w-full bg-[#EF3A6B] text-white font-semibold text-lg p-4 rounded-lg hover:bg-white hover:text-[#EF3A6B] border border-[#EF3A6B] transition-all duration-300"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="newsletter"></div>
+    <div id="footer" class="pt-20"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

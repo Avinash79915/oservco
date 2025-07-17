@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSERVCO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div
+      class="w-full h-[60vh] sm:h-[70vh] md:h-[70vh] overflow-hidden relative"
+      id="hero-carousel"
+    >
+      <!-- ✅ Single Slide Container -->
+      <div
+        class="flex w-full h-full transition-transform duration-700 ease-in-out"
+      >
+        <div
+          class="min-w-full h-full bg-cover bg-center"
+          style="background-image: url('./images/HomeImg.jpg')"
+        ></div>
+      </div>
+
+      <!-- ✅ Overlay Content (Text) -->
+      <div class="absolute inset-0 flex items-center z-10 px-4 sm:px-6">
+        <div class="w-full max-w-7xl mx-auto">
+          <div class="flex items-center justify-start">
+            <div
+              class="bg-[rgba(0,0,0,0.6)] text-black p-10 sm:p-6 md:p-10 lg:p-14 xl:p-20 rounded-2xl w-full max-w-[600px]"
+            >
+              <img class="mb-2" src="./images/goodiestore.svg" alt="" />
+              <h1
+                id="hero-subtitle"
+                class="text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold mb-4 leading-snug text-white"
+              >
+                Choose Your <br />Favorite &
+                <span class="text-[#E7AE22]">Enjoy</span>
+                its aroma
+              </h1>
+              <p class="mb-6 text-md sm:text-base text-left text-white">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                diam nonummy nibh euismod tincidunt
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- YouTube Video Modal -->
+    <div
+      id="videoModal"
+      class="fixed inset-0 bg-black/70 z-50 hidden flex items-center justify-center p-4"
+    >
+      <div class="relative w-full max-w-5xl">
+        <!-- Close Button -->
+        <button
+          id="closeVideoBtn"
+          class="absolute top-2 right-2 bg-white text-black rounded-full p-2 shadow text-xl z-10"
+        >
+          ✕
+        </button>
+        <!-- YouTube iframe -->
+        <div class="w-full aspect-[16/9] rounded-xl overflow-hidden">
+          <iframe
+            id="youtubeIframe"
+            class="w-full h-full"
+            src=""
+            title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <!-- About Section -->
+    <div
+      class="w-full px-4 py-12 md:pt-32 bg-white relative overflow-hidden md:min-h-[90vh]"
+    >
+      <!-- ✅ Decorative SVG at Bottom Right -->
+      <img
+        src="./images/about-bg-img.svg"
+        alt="Decoration"
+        class="absolute bottom-0 right-0 w-32 sm:w-40 md:w-[300px] lg:w-[600px] opacity-100 pointer-events-none select-none"
+      />
+
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center"
+      >
+        <!-- ✅ Left Side: Text and Button -->
+        <div class="text-left md:px-12 w-full md:w-[100%] md:mr-12">
+          <div class="relative inline-block mb-4 sm:mb-0 ml-8">
+            <!-- Background Leaf SVG -->
+            <img
+              src="./images/leaf.svg"
+              alt="Leaf Background"
+              class="absolute -top-10 left-6 sm:-top-14 sm:left-10 w-20 sm:w-28 md:w-32 opacity-90 pointer-events-none select-none"
+            />
+
+            <!-- Heading Text -->
+            <h1
+              class="text-4xl sm:text-5xl text-[#E7AE22] relative z-10"
+              style="font-family: 'Waterfall', cursive"
+            >
+              About us
+            </h1>
+          </div>
+
+          <h1 class="sm:text-2xl lg:text-4xl font-bold mb-4 leading-snug">
+            Family Deserves <br />
+            an <span class="text-[#E7AE22]"> Extraordinary </span> Gifts
+          </h1>
+          <p class="text-gray-600 text-md md:text-md mb-6">
+            At OSERVCO, we aim to be an extension of your enterprise, assisting
+            with the procurement of office consumables and customized business
+            gifts. <br /><br />
+            Powered by a network of over 200 vendor partners and more than 1,000
+            products across various categories and brands, OSERVCO serves as
+            your one-stop shop for all office consumable needs.
+            <br /><br />
+            With a team that brings over 30 years of expertise in enterprise
+            customer engagement and supply chain management, OSERVCO is
+            well-equipped to meet and exceed market demands.
+          </p>
+        </div>
+
+        <!-- ✅ Right Side: One Square Image -->
+        <div class="relative flex justify-center w-full md:w-auto">
+          <!-- Blue Background (Bottom Left) -->
+          <div
+            class="absolute -right-16 bottom-5 w-[90%] h-[60%] bg-[#F2F2F2] rounded-lg -translate-x-1/4 translate-y-1/4 -z-1"
+          ></div>
+
+          <!-- Main Image -->
+          <img
+            src="./images/about-img3.jpg"
+            alt="About Image"
+            class="w-[90%] max-w-[600px] object-cover rounded-lg relative z-10"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Offistore Section -->
+    <div
+      class="w-full px-4 py-12 bg-white relative overflow-hidden md:min-h-[80vh]"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center"
+      >
+        <!-- ✅ Left Side: Pink Background with Overlapping Images -->
+        <div class="relative flex justify-center items-center w-full h-full">
+          <div
+            class="bg-[#E7AE22] p-6 sm:p-8 w-[500px] h-[510px] relative flex flex-col justify-center items-center overflow-visible"
+          >
+            <!-- ✅ Overlapping Images -->
+            <div class="flex gap-4 relative w-full justify-center">
+              <!-- First Image (slightly higher) -->
+              <img
+                src="./images/offistore2.jpg"
+                class="w-[60%] object-cover relative z-10 md:-translate-y-32 md:translate-x-10 -translate-y-32 translate-x-0"
+                alt="Image 1"
+              />
+
+              <!-- Second Image (normal) -->
+              <img
+                src="./images/offistore1.jpg"
+                class="w-[60%] object-cover relative z-20 md:translate-x-12 md:translate-y-5 translate-x-0 translate-y-20"
+                alt="Image 2"
+              />
+
+              <!-- ✅ Play Button Positioned Below First Image -->
+              <button id="playVideoBtn"
+                class="absolute bottom-10 -left-2 flex items-center gap-3 text-white text-md font-semibold z-30"
+              >
+                <div
+                  class="w-10 h-10 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="./images/play-white.svg"
+                    alt="Play Icon"
+                    class="w-8 h-8"
+                  />
+                </div>
+                <span class="uppercase font-light text-md">Play Video</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ Right Side: Text Content -->
+        <div class="text-left md:px-12 w-full md:w-[100%] md:mr-12">
+          <!-- Decorative Title -->
+          <div class="relative inline-block mb-4 sm:mb-8">
+            <!-- Background Leaf SVG -->
+            <img
+              src="./images/leaf.svg"
+              alt="Leaf Background"
+              class="absolute -top-12 left-6 sm:-top-20 sm:left-10 w-20 sm:w-28 md:w-32 opacity-90 pointer-events-none select-none"
+            />
+
+            <!-- Heading Text -->
+            <h1
+              class="text-4xl sm:text-5xl text-[#E7AE22] relative z-10"
+              style="font-family: 'Waterfall', cursive"
+            >
+              Why Offistore
+            </h1>
+          </div>
+
+          <!-- Main Heading -->
+          <h1
+            class="text-2xl sm:text-3xl lg:text-[40px] font-bold mb-8 leading-snug"
+          >
+            We Arrange <span class="text-[#E7AE22]">Flowers Personally</span> &
+            Bring Happiness
+          </h1>
+
+          <!-- Description -->
+          <p class="text-gray-600 text-md md:text-md mb-6 leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
+          </p>
+
+          <!-- ✅ List Items -->
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3 text-gray-700 font-semibold">
+              <img
+                src="./images/check-yellow.svg"
+                class="w-6 h-6"
+                alt="Check Icon"
+              />
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            </li>
+            <li class="flex items-center gap-3 text-gray-700 font-semibold">
+              <img
+                src="./images/check-yellow.svg"
+                class="w-6 h-6"
+                alt="Check Icon"
+              />
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            </li>
+            <li class="flex items-center gap-3 text-gray-700 font-semibold">
+              <img
+                src="./images/check-yellow.svg"
+                class="w-6 h-6"
+                alt="Check Icon"
+              />
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            </li>
+            <li class="flex items-center gap-3 text-gray-700 font-semibold">
+              <img
+                src="./images/check-yellow.svg"
+                class="w-6 h-6"
+                alt="Check Icon"
+              />
+              Lorem ipsum dolor sit amet , consectetuer adipiscing elit,
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amazing Gift Section with Background Image -->
+    <div
+      class="w-full h-[70vh] bg-cover bg-center flex justify-center items-center px-4"
+      style="background-image: url('./images/goodiesstore-bg.jpg')"
+    >
+      <!-- Content Box -->
+      <div
+        class="text-center max-w-4xl mx-auto p-4 sm:p-2 flex flex-col items-center space-y-6"
+      >
+        <!-- Heading -->
+        <h1
+          class="text-2xl sm:text-4xl font-semibold text-white tracking-widest"
+        >
+          AMAZING GIFT
+        </h1>
+
+        <!-- Subheading with Pink 70% -->
+        <h2
+          class="flex flex-col sm:flex-row text-xl sm:text-[50px] font-bold relative w-full justify-center items-center text-white gap-2"
+        >
+          <span class="text-[#E7AE22] text-[35px] sm:text-[50px]">70%</span>
+          <span class="text-white text-[20px] sm:text-[50px]"
+            >OFF ON HOME DECOR</span
+          >
+        </h2>
+
+        <!-- Description Paragraph -->
+        <p class="text-white text-md sm:text-md leading-relaxed px-4 max-w-3xl">
+          Discover unique and personalized home décor gifts that bring life to
+          your living spaces. Shop now and enjoy exclusive discounts.
+        </p>
+
+        <!-- Discover More Button -->
+        <p
+          class="flex items-center gap-2 text-[#E7AE22] font-semibold text-md sm:text-md cursor-pointer group transition-colors duration-300 hover:text-white"
+        >
+          Discover More
+          <!-- ✅ Pink Arrow Default -->
+          <img
+            src="./images/arrow-yellow.svg"
+            alt="arrow"
+            class="w-4 h-4 sm:w-5 sm:h-5 block group-hover:hidden"
+          />
+          <!-- ✅ White Arrow on Hover -->
+          <img
+            src="./images/arrow-white.svg"
+            alt="arrow hover"
+            class="w-4 h-4 sm:w-5 sm:h-5 hidden group-hover:block"
+          />
+        </p>
+      </div>
+    </div>
+
+    <div class="w-full px-4 md:py-16 py-6 bg-white max-w-7xl mx-auto">
+      <!-- ✅ Products Heading Alone on Top Center in Mobile -->
+      <div
+        class="relative inline-block md:mb-6 sm:mb-0 text-center md:text-left w-full"
+      >
+        <img
+          src="./images/leaf.svg"
+          alt="Leaf Background"
+          class="absolute -top-10 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0 sm:-top-14 sm:left-10 w-20 sm:w-28 md:w-32 opacity-90 pointer-events-none select-none"
+        />
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl text-[#E7AE22] relative z-10"
+          style="font-family: 'Waterfall', cursive"
+        >
+          Products
+        </h1>
+      </div>
+
+      <!-- ✅ Main Flex Content -->
+      <div class="flex flex-col md:flex-row md:gap-8 gap-4 md:text-left">
+        <!-- ✅ Left: Our Best Products -->
+        <div
+          class="md:w-[40%] w-full flex justify-center md:justify-start items-center"
+        >
+          <h2
+            class="text-3xl sm:text-4xl md:text-[40px] font-semibold text-gray-800"
+          >
+            Our <span class="text-[#E7AE22]">Best</span> Products
+          </h2>
+        </div>
+
+        <!-- ✅ Right: Paragraph -->
+        <div
+          class="md:w-[60%] w-full flex justify-center md:justify-start items-center px-0 md:px-0"
+        >
+          <p
+            class="text-gray-600 text-md sm:text-md leading-relaxed max-w-md md:max-w-full"
+          >
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- product section -->
+    <div class="w-full px-4 py-2 bg-white max-w-7xl mx-auto space-y-12 mb-12">
+      <!-- ✅ Top Heading -->
+      <div class="w-full text-left md:text-left">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
+          Stationery, Printing & Packing Accessories
+        </h1>
+      </div>
+
+      <!-- ✅ 3 Box Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- ✅ Card 1 -->
+        <div
+          class="bg-white rounded-2xl shadow-md py-6 sm:py-10 px-4 sm:px-8 flex flex-col transition-shadow duration-300 ease-in-out group hover:shadow-lg"
+        >
+          <img
+            src="./images/best-product-1.jpg"
+            alt="Service 1"
+            class="rounded-lg mb-4 object-cover w-full"
+          />
+          <h2 class="text-xl sm:text-2xl font-bold text-black mb-2">
+            Curation
+          </h2>
+          <h2 class="text-lg sm:text-xl font-bold text-black mb-2">
+            Lorem ipsum dolor sit amet,
+          </h2>
+          <hr class="w-12 h-[2px] bg-gray-300 rounded-full mb-4" />
+
+          <p
+            class="flex items-center gap-2 text-[#C6C3C1] font-semibold text-sm sm:text-md cursor-pointer group-hover:text-[#E7AE22] transition-colors duration-300"
+          >
+            Enquiry Now
+            <img
+              src="./images/arrow-grey.svg"
+              class="w-4 h-4 group-hover:hidden"
+            />
+            <img
+              src="./images/arrow-yellow.svg"
+              class="w-4 h-4 hidden group-hover:block"
+            />
+          </p>
+        </div>
+
+        <!-- ✅ Card 2 -->
+        <div
+          class="bg-white rounded-2xl shadow-md py-6 sm:py-10 px-4 sm:px-8 flex flex-col transition-shadow duration-300 ease-in-out group hover:shadow-lg"
+        >
+          <img
+            src="./images/best-product-1.jpg"
+            alt="Service 2"
+            class="rounded-lg mb-4 object-cover w-full"
+          />
+          <h2 class="text-xl sm:text-2xl font-bold text-black mb-2">
+            Curation
+          </h2>
+          <h2 class="text-lg sm:text-xl font-bold text-black mb-2">
+            Lorem ipsum dolor sit amet,
+          </h2>
+          <hr class="w-12 h-[2px] bg-gray-300 rounded-full mb-4" />
+
+          <p
+            class="flex items-center gap-2 text-[#C6C3C1] font-semibold text-sm sm:text-md cursor-pointer group-hover:text-[#E7AE22] transition-colors duration-300"
+          >
+            Enquiry Now
+            <img
+              src="./images/arrow-grey.svg"
+              class="w-4 h-4 group-hover:hidden"
+            />
+            <img
+              src="./images/arrow-yellow.svg"
+              class="w-4 h-4 hidden group-hover:block"
+            />
+          </p>
+        </div>
+
+        <!-- ✅ Card 3 -->
+        <div
+          class="bg-white rounded-2xl shadow-md py-6 sm:py-10 px-4 sm:px-8 flex flex-col transition-shadow duration-300 ease-in-out group hover:shadow-lg"
+        >
+          <img
+            src="./images/best-product-1.jpg"
+            alt="Service 3"
+            class="rounded-lg mb-4 object-cover w-full"
+          />
+          <h2 class="text-xl sm:text-2xl font-bold text-black mb-2">
+            Curation
+          </h2>
+          <h2 class="text-lg sm:text-xl font-bold text-black mb-2">
+            Lorem ipsum dolor sit amet,
+          </h2>
+          <hr class="w-12 h-[2px] bg-gray-300 rounded-full mb-4" />
+
+          <p
+            class="flex items-center gap-2 text-[#C6C3C1] font-semibold text-sm sm:text-md cursor-pointer group-hover:text-[#E7AE22] transition-colors duration-300"
+          >
+            Enquiry Now
+            <img
+              src="./images/arrow-grey.svg"
+              class="w-4 h-4 group-hover:hidden"
+            />
+            <img
+              src="./images/arrow-yellow.svg"
+              class="w-4 h-4 hidden group-hover:block"
+            />
+          </p>
+        </div>
+      </div>
+
+      <!-- ✅ View All Button Center -->
+      <div class="flex justify-center">
+        <a href="/goodiestorProduct.html">
+          <p
+            class="flex items-center gap-2 bg-[#E7AE22] text-white font-semibold text-base sm:text-lg cursor-pointer group px-6 py-3 rounded-lg transition-all duration-300 border border-[#E7AE22] hover:bg-white hover:text-[#E7AE22]"
+          >
+            View All
+            <img
+              src="./images/arrow-white.svg"
+              class="w-5 h-5 group-hover:hidden"
+            />
+            <img
+              src="./images/arrow-yellow.svg"
+              class="w-5 h-5 hidden group-hover:block"
+            />
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <div class="w-full px-4 py-2 bg-white max-w-7xl mx-auto space-y-12 mb-12">
+      <!-- ✅ Top Heading -->
+      <div class="w-full text-left md:text-left">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
+          Stationery, Printing & Packing Accessories
+        </h1>
+      </div>
+
+      <!-- ✅ 3 Box Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <!-- ✅ Card 1 -->
+        <div
+          class="bg-white rounded-2xl shadow-md py-6 sm:py-10 px-4 sm:px-8 flex flex-col transition-shadow duration-300 ease-in-out group hover:shadow-lg"
+        >
+          <img
+            src="./images/best-product-1.jpg"
+            alt="Service 1"
+            class="rounded-lg mb-4 object-cover w-full"
+          />
+          <h2 class="text-xl sm:text-2xl font-bold text-black mb-2">
+            Curation
+          </h2>
+          <h2 class="text-lg sm:text-xl font-bold text-black mb-2">
+            Lorem ipsum dolor sit amet,
+          </h2>
+          <hr class="w-12 h-[2px] bg-gray-300 rounded-full mb-4" />
+
+          <p
+            class="flex items-center gap-2 text-[#C6C3C1] font-semibold text-sm sm:text-md cursor-pointer group-hover:text-[#E7AE22] transition-colors duration-300"
+          >
+            Enquiry Now
+            <img
+              src="./images/arrow-grey.svg"
+              class="w-4 h-4 group-hover:hidden"
+            />
+            <img
+              src="./images/arrow-yellow.svg"
+              class="w-4 h-4 hidden group-hover:block"
+            />
+          </p>
+        </div>
+
+        <!-- ✅ Card 2 -->
+        <div
+          class="bg-white rounded-2xl shadow-md py-6 sm:py-10 px-4 sm:px-8 flex flex-col transition-shadow duration-300 ease-in-out group hover:shadow-lg"
+        >
+          <img
+            src="./images/best-product-1.jpg"
+            alt="Service 2"
+            class="rounded-lg mb-4 object-cover w-full"
+          />
+          <h2 class="text-xl sm:text-2xl font-bold text-black mb-2">
+            Curation
+          </h2>
+          <h2 class="text-lg sm:text-xl font-bold text-black mb-2">
+            Lorem ipsum dolor sit amet,
+          </h2>
+          <hr class="w-12 h-[2px] bg-gray-300 rounded-full mb-4" />
+
+          <p
+            class="flex items-center gap-2 text-[#C6C3C1] font-semibold text-sm sm:text-md cursor-pointer group-hover:text-[#E7AE22] transition-colors duration-300"
+          >
+            Enquiry Now
+            <img
+              src="./images/arrow-grey.svg"
+              class="w-4 h-4 group-hover:hidden"
+            />
+            <img
+              src="./images/arrow-yellow.svg"
+              class="w-4 h-4 hidden group-hover:block"
+            />
+          </p>
+        </div>
+
+        <!-- ✅ Card 3 -->
+        <div
+          class="bg-white rounded-2xl shadow-md py-6 sm:py-10 px-4 sm:px-8 flex flex-col transition-shadow duration-300 ease-in-out group hover:shadow-lg"
+        >
+          <img
+            src="./images/best-product-1.jpg"
+            alt="Service 3"
+            class="rounded-lg mb-4 object-cover w-full"
+          />
+          <h2 class="text-xl sm:text-2xl font-bold text-black mb-2">
+            Curation
+          </h2>
+          <h2 class="text-lg sm:text-xl font-bold text-black mb-2">
+            Lorem ipsum dolor sit amet,
+          </h2>
+          <hr class="w-12 h-[2px] bg-gray-300 rounded-full mb-4" />
+
+          <p
+            class="flex items-center gap-2 text-[#C6C3C1] font-semibold text-sm sm:text-md cursor-pointer group-hover:text-[#E7AE22] transition-colors duration-300"
+          >
+            Enquiry Now
+            <img
+              src="./images/arrow-grey.svg"
+              class="w-4 h-4 group-hover:hidden"
+            />
+            <img
+              src="./images/arrow-yellow.svg"
+              class="w-4 h-4 hidden group-hover:block"
+            />
+          </p>
+        </div>
+      </div>
+
+      <!-- ✅ View All Button Center -->
+      <div class="flex justify-center">
+        <a href="/goodiestorProduct.html">
+          <p
+            class="flex items-center gap-2 bg-[#E7AE22] text-white font-semibold text-base sm:text-lg cursor-pointer group px-6 py-3 rounded-lg transition-all duration-300 border border-[#E7AE22] hover:bg-white hover:text-[#E7AE22]"
+          >
+            View All
+            <img
+              src="./images/arrow-white.svg"
+              class="w-5 h-5 group-hover:hidden"
+            />
+            <img
+              src="./images/arrow-yellow.svg"
+              class="w-5 h-5 hidden group-hover:block"
+            />
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <div id="blog"></div>
+    <div id="newsletter"></div>
+    <div id="footer" class="pt-20"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

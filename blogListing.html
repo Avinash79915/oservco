@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSERVCO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div
+      class="w-full h-[60vh] sm:h-[70vh] md:h-[70vh] overflow-hidden relative"
+      id="hero-carousel"
+    >
+      <!-- ✅ Single Slide Background -->
+      <div
+        class="w-full h-full bg-cover bg-center"
+        style="background-image: url('./images/HomeImg.jpg')"
+      ></div>
+
+      <!-- ✅ Overlay Content -->
+      <div class="absolute inset-0 flex items-end z-10 px-4 sm:px-6">
+        <div
+          class="w-full max-w-7xl mx-auto flex items-center justify-start mb-8"
+        >
+          <div
+            class="bg-[rgba(250,231,209,0.85)] text-black py-8 px-10 rounded-2xl w-auto"
+          >
+            <h1
+              id="hero-subtitle"
+              class="text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-snug"
+            >
+              Blogs
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+      <!-- Title -->
+      <div class="relative inline-block mt-16">
+        <img
+          src="./images/leaf.svg"
+          alt="Leaf Background"
+          class="absolute -top-16 left-10 w-28 opacity-90 pointer-events-none select-none"
+        />
+        <h1
+          class="text-4xl sm:text-5xl text-[#EF3A6B] relative z-10"
+          style="font-family: 'Waterfall', cursive"
+        >
+          Our Blogs
+        </h1>
+      </div>
+
+      <h1
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 leading-snug max-w-2xl text-center mx-auto"
+      >
+        Tips &  
+        <span class="text-[#EF3A6B]"> Article </span> 
+      </h1>
+
+      <p class="text-gray-600 max-w-2xl mx-auto mb-12">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+        volutpat. Ut wisi enim ad
+      </p>
+
+      <!-- ✅ Two Column Layout -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 md:gap-20 gap-80 items-start text-left"
+      >
+          <!-- Blog 1 -->
+              <div class="flex flex-col gap-1">
+                <div class="relative w-full">
+                  <img
+                    src="./images/blog1.jpg"
+                    class="w-full h-50 object-cover"
+                  />
+
+                  <!-- Bottom Left Date Box -->
+                  <div
+                    class="absolute bottom-0 left-0 w-[160px] h-[50px] bg-white text-black text-sm font-semibold px-3 py-1 items-center flex justify-center"
+                  >
+                    23 July 2025
+                  </div>
+                </div>
+
+                <div class="pt-5 flex flex-col gap-4">
+                  <h3 class="text-2xl font-semibold text-black">
+                    Decorate Your Cakes With Flowers to Make Them Elegant
+                  </h3>
+                  <p class="text-black text-md">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat.
+                  </p>
+                  <a href="/blodDetails.html">
+                  <button
+                    class="text-black font-medium inline-flex items-center gap-2 group mt-auto hover:text-[#EF3A6B] transition-colors"
+                  >
+                    Read More
+                    <span
+                      class="flex items-center justify-center w-6 h-6 relative"
+                    >
+                      <!-- Black arrow (default) -->
+                      <img
+                        src="./images/black-arrow.svg"
+                        class="w-6 h-6 absolute inset-0 group-hover:hidden transition-transform"
+                      />
+                      <!-- Pink arrow (on hover) -->
+                      <img
+                        src="./images/arrow-pink.svg"
+                        class="w-6 h-6 absolute inset-0 hidden group-hover:block group-hover:translate-x-1 transition-transform"
+                      />
+                    </span>
+                  </button>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Blog 2 -->
+              <div class="flex flex-col gap-1 hidden md:block">
+                <div class="relative w-full">
+                  <img
+                    src="./images/blog2.jpg"
+                    class="w-full h-50 object-cover"
+                  />
+
+                  <!-- Bottom Left Date Box -->
+                  <div
+                    class="absolute bottom-0 left-0 w-[160px] h-[50px] bg-white text-black text-sm font-semibold px-3 py-1 items-center flex justify-center"
+                  >
+                    23 July 2025
+                  </div>
+                </div>
+
+                <div class="pt-5 flex flex-col gap-4">
+                  <h3 class="text-2xl font-semibold text-black">
+                    Decorate Your Cakes With Flowers to Make Them Elegant
+                  </h3>
+                  <p class="text-black text-md">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat.
+                  </p>
+                  <button
+                    class="text-black font-medium inline-flex items-center gap-2 group mt-auto hover:text-[#EF3A6B] transition-colors"
+                  >
+                    Read More
+                    <span
+                      class="flex items-center justify-center w-6 h-6 relative"
+                    >
+                      <!-- Black arrow (default) -->
+                      <img
+                        src="./images/black-arrow.svg"
+                        class="w-6 h-6 absolute inset-0 group-hover:hidden transition-transform"
+                      />
+                      <!-- Pink arrow (on hover) -->
+                      <img
+                        src="./images/arrow-pink.svg"
+                        class="w-6 h-6 absolute inset-0 hidden group-hover:block group-hover:translate-x-1 transition-transform"
+                      />
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+                <!-- Blog 1 -->
+              <div class="flex flex-col gap-1">
+                <div class="relative w-full">
+                  <img
+                    src="./images/blog1.jpg"
+                    class="w-full h-50 object-cover"
+                  />
+
+                  <!-- Bottom Left Date Box -->
+                  <div
+                    class="absolute bottom-0 left-0 w-[160px] h-[50px] bg-white text-black text-sm font-semibold px-3 py-1 items-center flex justify-center"
+                  >
+                    23 July 2025
+                  </div>
+                </div>
+
+                <div class="pt-5 flex flex-col gap-4">
+                  <h3 class="text-2xl font-semibold text-black">
+                    Decorate Your Cakes With Flowers to Make Them Elegant
+                  </h3>
+                  <p class="text-black text-md">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat.
+                  </p>
+                  <button
+                    class="text-black font-medium inline-flex items-center gap-2 group mt-auto hover:text-[#EF3A6B] transition-colors"
+                  >
+                    Read More
+                    <span
+                      class="flex items-center justify-center w-6 h-6 relative"
+                    >
+                      <!-- Black arrow (default) -->
+                      <img
+                        src="./images/black-arrow.svg"
+                        class="w-6 h-6 absolute inset-0 group-hover:hidden transition-transform"
+                      />
+                      <!-- Pink arrow (on hover) -->
+                      <img
+                        src="./images/arrow-pink.svg"
+                        class="w-6 h-6 absolute inset-0 hidden group-hover:block group-hover:translate-x-1 transition-transform"
+                      />
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Blog 2 -->
+              <div class="flex flex-col gap-1 hidden md:block">
+                <div class="relative w-full">
+                  <img
+                    src="./images/blog2.jpg"
+                    class="w-full h-50 object-cover"
+                  />
+
+                  <!-- Bottom Left Date Box -->
+                  <div
+                    class="absolute bottom-0 left-0 w-[160px] h-[50px] bg-white text-black text-sm font-semibold px-3 py-1 items-center flex justify-center"
+                  >
+                    23 July 2025
+                  </div>
+                </div>
+
+                <div class="pt-5 flex flex-col gap-4">
+                  <h3 class="text-2xl font-semibold text-black">
+                    Decorate Your Cakes With Flowers to Make Them Elegant
+                  </h3>
+                  <p class="text-black text-md">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat.
+                  </p>
+                  <button
+                    class="text-black font-medium inline-flex items-center gap-2 group mt-auto hover:text-[#EF3A6B] transition-colors"
+                  >
+                    Read More
+                    <span
+                      class="flex items-center justify-center w-6 h-6 relative"
+                    >
+                      <!-- Black arrow (default) -->
+                      <img
+                        src="./images/black-arrow.svg"
+                        class="w-6 h-6 absolute inset-0 group-hover:hidden transition-transform"
+                      />
+                      <!-- Pink arrow (on hover) -->
+                      <img
+                        src="./images/arrow-pink.svg"
+                        class="w-6 h-6 absolute inset-0 hidden group-hover:block group-hover:translate-x-1 transition-transform"
+                      />
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+                <!-- Blog 1 -->
+              <div class="flex flex-col gap-1">
+                <div class="relative w-full">
+                  <img
+                    src="./images/blog1.jpg"
+                    class="w-full h-50 object-cover"
+                  />
+
+                  <!-- Bottom Left Date Box -->
+                  <div
+                    class="absolute bottom-0 left-0 w-[160px] h-[50px] bg-white text-black text-sm font-semibold px-3 py-1 items-center flex justify-center"
+                  >
+                    23 July 2025
+                  </div>
+                </div>
+
+                <div class="pt-5 flex flex-col gap-4">
+                  <h3 class="text-2xl font-semibold text-black">
+                    Decorate Your Cakes With Flowers to Make Them Elegant
+                  </h3>
+                  <p class="text-black text-md">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat.
+                  </p>
+                  <button
+                    class="text-black font-medium inline-flex items-center gap-2 group mt-auto hover:text-[#EF3A6B] transition-colors"
+                  >
+                    Read More
+                    <span
+                      class="flex items-center justify-center w-6 h-6 relative"
+                    >
+                      <!-- Black arrow (default) -->
+                      <img
+                        src="./images/black-arrow.svg"
+                        class="w-6 h-6 absolute inset-0 group-hover:hidden transition-transform"
+                      />
+                      <!-- Pink arrow (on hover) -->
+                      <img
+                        src="./images/arrow-pink.svg"
+                        class="w-6 h-6 absolute inset-0 hidden group-hover:block group-hover:translate-x-1 transition-transform"
+                      />
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Blog 2 -->
+              <div class="flex flex-col gap-1 hidden md:block">
+                <div class="relative w-full">
+                  <img
+                    src="./images/blog2.jpg"
+                    class="w-full h-50 object-cover"
+                  />
+
+                  <!-- Bottom Left Date Box -->
+                  <div
+                    class="absolute bottom-0 left-0 w-[160px] h-[50px] bg-white text-black text-sm font-semibold px-3 py-1 items-center flex justify-center"
+                  >
+                    23 July 2025
+                  </div>
+                </div>
+
+                <div class="pt-5 flex flex-col gap-4">
+                  <h3 class="text-2xl font-semibold text-black">
+                    Decorate Your Cakes With Flowers to Make Them Elegant
+                  </h3>
+                  <p class="text-black text-md">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat.
+                  </p>
+                  <button
+                    class="text-black font-medium inline-flex items-center gap-2 group mt-auto hover:text-[#EF3A6B] transition-colors"
+                  >
+                    Read More
+                    <span
+                      class="flex items-center justify-center w-6 h-6 relative"
+                    >
+                      <!-- Black arrow (default) -->
+                      <img
+                        src="./images/black-arrow.svg"
+                        class="w-6 h-6 absolute inset-0 group-hover:hidden transition-transform"
+                      />
+                      <!-- Pink arrow (on hover) -->
+                      <img
+                        src="./images/arrow-pink.svg"
+                        class="w-6 h-6 absolute inset-0 hidden group-hover:block group-hover:translate-x-1 transition-transform"
+                      />
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              
+      </div>
+    </div>
+
+    <div id="newsletter"></div>
+    <div id="footer" class="pt-20"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

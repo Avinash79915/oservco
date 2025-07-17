@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSERVCO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div
+      class="w-full h-[60vh] sm:h-[70vh] md:h-[70vh] overflow-hidden relative"
+      id="hero-carousel"
+    >
+      <!-- ✅ Single Slide Background -->
+      <div
+        class="w-full h-full bg-cover bg-center"
+        style="background-image: url('./images/HomeImg.jpg')"
+      ></div>
+
+      <!-- ✅ Overlay Content -->
+      <div class="absolute inset-0 flex items-end z-10 px-4 sm:px-6">
+        <div
+          class="w-full max-w-7xl mx-auto flex items-center justify-start mb-8"
+        >
+          <div
+            class="bg-[rgba(250,231,209,0.85)] text-black py-8 px-10 rounded-2xl w-auto"
+          >
+            <h1
+              id="hero-subtitle"
+              class="text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-snug"
+            >
+              Blogs
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full px-4 py-16 bg-white flex justify-center">
+      <div
+        class="max-w-7xl w-full flex flex-col items-start text-start space-y-8"
+      >
+        <!-- Heading -->
+        <h2 class="text-3xl md:text-4xl font-bold text-black">
+          Discover 5 Essential Tips for Choosing the Perfect Bouquet
+        </h2>
+
+        <!-- Image -->
+        <img
+          src="./images/blog-banner.jpg"
+          alt="Big Banner"
+          class="w-full max-w-7xl"
+        />
+
+        <!-- Paragraph -->
+        <p class="text-gray-700 text-lg max-w-7xl">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+          molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+          vero eros et accumsan et iusto odio dignissim qui blandit praesent
+          luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+          Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+          molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+          vero eros et accumsan et iusto odio dignissim qui blandit praesent
+          luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        </p>
+
+        <!-- Second Heading -->
+        <h3 class="text-3xl font-semibold text-black">
+          Rice Terraces, Tegallalang?
+        </h3>
+
+        <!-- Second Paragraph -->
+        <p class="text-gray-700 text-lg max-w-7xl">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+          molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+          vero eros et accumsan et iusto odio dignissim qui blandit praesent
+          luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+          Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+          molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+          vero eros et accumsan et iusto odio dignissim qui blandit praesent
+          luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        </p>
+      </div>
+    </div>
+
+    <div class="w-full px-4 py-8 max-w-7xl mx-auto space-y-4">
+      <!-- ✅ Social Icons aligned to start -->
+      <div class="flex gap-4">
+        <!-- LinkedIn -->
+        <a href="#" class="group relative w-6 h-6">
+          <img
+            src="./images/linkdln-black.svg"
+            alt="LinkedIn"
+            class="absolute inset-0 group-hover:hidden"
+          />
+          <img
+            src="./images/linkdln-hover.svg"
+            alt="LinkedIn Hover"
+            class="absolute inset-0 hidden group-hover:block"
+          />
+        </a>
+        <!-- Instagram -->
+        <a href="#" class="group relative w-6 h-6">
+          <img
+            src="./images/insta-black.svg"
+            alt="Instagram"
+            class="absolute inset-0 group-hover:hidden"
+          />
+          <img
+            src="./images/insta-hover.svg"
+            alt="Instagram Hover"
+            class="absolute inset-0 hidden group-hover:block"
+          />
+        </a>
+        <!-- Facebook -->
+        <a href="#" class="group relative w-6 h-6">
+          <img
+            src="./images/fb-black.svg"
+            alt="Facebook"
+            class="absolute inset-0 group-hover:hidden"
+          />
+          <img
+            src="./images/fb-hover.svg"
+            alt="Facebook Hover"
+            class="absolute inset-0 hidden group-hover:block"
+          />
+        </a>
+        <!-- YouTube -->
+        <a href="#" class="group relative w-6 h-6">
+          <img
+            src="./images/yt-black.svg"
+            alt="YouTube"
+            class="absolute inset-0 group-hover:hidden"
+          />
+          <img
+            src="./images/yt-hover.svg"
+            alt="YouTube Hover"
+            class="absolute inset-0 hidden group-hover:block"
+          />
+        </a>
+
+        <h1 class="text-md font-bold pl-10">Share Now</h1>
+      </div>
+
+      <!-- ✅ Comment Line aligned to start -->
+      <p class="text-black text-md">No comments yet for this post.</p>
+    </div>
+
+    <div class="w-full px-4 py-8 flex justify-center">
+      <div class="w-full max-w-7xl bg-white shadow-lg rounded-xl p-8 space-y-6">
+        <!-- Heading -->
+        <h2 class="text-3xl font-bold text-black">Post Your Comment Here</h2>
+
+        <!-- Paragraph -->
+        <p class="text-gray-600 text-md">
+          Your email address will not be published. Required fields are marked
+          <span class="text-red-500 font-bold">*</span>
+        </p>
+
+        <!-- Message Textarea -->
+        <textarea
+          placeholder="Write your message here..."
+          class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EF3A6B] min-h-[150px]"
+        ></textarea>
+
+        <!-- Name Fields -->
+        <div class="flex flex-col md:flex-row gap-4">
+          <input
+            type="text"
+            placeholder="Your Name *"
+            class="w-full md:w-1/2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EF3A6B]"
+          />
+          <input
+            type="text"
+            placeholder="Last Name *"
+            class="w-full md:w-1/2 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EF3A6B]"
+          />
+        </div>
+
+        <!-- Checkbox + Button -->
+        <div
+          class="flex flex-col md:flex-row md:items-center justify-between gap-4"
+        >
+          <!-- Checkbox -->
+          <label class="flex items-center space-x-2 text-gray-700">
+            <input type="checkbox" class="w-4 h-4 accent-[#EF3A6B]" />
+            <span
+              >Save my name, email, and website in this browser for the next
+              time I comment.</span
+            >
+          </label>
+
+          <!-- Button -->
+          <button
+            class="bg-[#EF3A6B] text-white font-semibold px-6 py-3 rounded-lg border border-transparent hover:bg-white hover:text-[#EF3A6B] hover:border-[#EF3A6B] transition-all w-full md:w-auto"
+          >
+            Post Comment
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="newsletter"></div>
+    <div id="footer" class="pt-20"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

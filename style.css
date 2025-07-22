@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 html, body {
@@ -12,8 +13,7 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: "Syne", sans-serif;
-    overflow-x: hidden;
-      scroll-behavior: smooth;
+  scroll-behavior: smooth;
 
 }
 

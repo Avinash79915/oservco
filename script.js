@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   Promise.all([navbarPromise, footerPromise, blogPromise, newsletterPromise]).then(() => {
-    AOS.init({ once: true, duration: 1000 });
+    AOS.init({ once: true, duration: 2000 });
 
     const menuToggle = document.getElementById("menu-toggle");
     const sidebar = document.getElementById("sidebar");

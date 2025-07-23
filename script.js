@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       const navbar = document.getElementById("navbar");
       if (navbar) navbar.innerHTML = data;
+      
+      // Initialize sticky navbar after content is loaded
+      initStickyNavbar();
     });
 
   const footerPromise = fetch("footer.html")
@@ -26,6 +29,43 @@ document.addEventListener("DOMContentLoaded", () => {
       const newsletter = document.getElementById("newsletter");
       if (newsletter) newsletter.innerHTML = data;
     });
+
+  // ✅ STICKY NAVBAR FUNCTION
+  function initStickyNavbar() {
+    const navbar = document.querySelector('nav');
+    if (!navbar) return;
+
+    // Make navbar fixed positioned
+    navbar.style.position = 'fixed';
+    navbar.style.top = '0';
+    navbar.style.left = '0';
+    navbar.style.right = '0';
+    navbar.style.zIndex = '9999';
+    navbar.style.transition = 'all 0.3s ease-in-out';
+
+    // Add padding to body to prevent content jump
+    document.body.style.paddingTop =  '120px';
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 50) {
+        // When scrolled down - add glassmorphism effect
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
+        navbar.style.backdropFilter = 'blur(15px)';
+        navbar.style.webkitBackdropFilter = 'blur(15px)';
+        navbar.style.borderBottom = '1px solid rgba(217, 217, 217, 0.3)';
+        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+      } else {
+        // When at top - restore original appearance
+        navbar.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+        navbar.style.backdropFilter = 'none';
+        navbar.style.webkitBackdropFilter = 'none';
+        navbar.style.borderBottom = '0px dotted #D9D9D9';
+        navbar.style.boxShadow = 'none';
+      }
+    });
+  }
 
   Promise.all([navbarPromise, footerPromise, blogPromise, newsletterPromise]).then(() => {
     AOS.init({ once: true, duration: 2000 });

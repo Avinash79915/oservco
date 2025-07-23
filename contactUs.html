@@ -20,7 +20,8 @@
 
     <div
       class="w-full h-[60vh] sm:h-[70vh] md:h-[70vh] overflow-hidden relative"
-      id="hero-carousel" data-aos="fade-up"
+      id="hero-carousel"
+      data-aos="fade-up"
     >
       <!-- ✅ Single Slide Background -->
       <div
@@ -48,12 +49,19 @@
     </div>
 
     <div class="w-full px-4 py-16 bg-white flex justify-center">
+      <!-- ✅ Decorative SVG at Bottom Right -->
+      <img
+        src="./images/contact-decoration.svg"
+        alt="Decoration"
+        class="absolute bottom-50 right-0 w-32 sm:w-40 md:w-[500px] lg:w-[500px] opacity-100 pointer-events-none select-none -z-8"
+      />
       <div
         class="max-w-7xl w-full flex flex-col md:flex-row gap-12 md:h-[550px]"
       >
         <!-- ✅ Left Card (40%) -->
         <div
-          class="bg-white rounded-2xl shadow-lg p-8 md:w-[40%] w-full flex flex-col justify-between" data-aos="fade-right"
+          class="bg-white rounded-2xl shadow-lg p-8 md:w-[40%] w-full flex flex-col justify-between"
+          data-aos="fade-right"
         >
           <!-- Heading -->
           <h2 class="text-3xl font-bold text-black">Get in Touch</h2>
@@ -106,7 +114,7 @@
           <!-- Social Icons -->
           <div class="flex gap-4">
             <!-- LinkedIn -->
-            <a href="#" class="group relative w-6 h-6">
+            <a href="#" class="group relative w-6 h-7">
               <img
                 src="./images/linkdln-black.svg"
                 alt="LinkedIn"
@@ -115,6 +123,32 @@
               <img
                 src="./images/linkdln-hover.svg"
                 alt="LinkedIn Hover"
+                class="absolute inset-0 hidden group-hover:block"
+              />
+            </a>
+            <!-- Facebook -->
+            <a href="#" class="group relative w-7 h-6">
+              <img
+                src="./images/fb-black.svg"
+                alt="Facebook"
+                class="absolute inset-0 group-hover:hidden"
+              />
+              <img
+                src="./images/fb-hover.svg"
+                alt="Facebook Hover"
+                class="absolute inset-0 hidden group-hover:block"
+              />
+            </a>
+            <!-- YouTube -->
+            <a href="#" class="group relative w-7 h-6 mt-[2px]">
+              <img
+                src="./images/yt-black.svg"
+                alt="YouTube"
+                class="absolute inset-0 group-hover:hidden"
+              />
+              <img
+                src="./images/yt-hover.svg"
+                alt="YouTube Hover"
                 class="absolute inset-0 hidden group-hover:block"
               />
             </a>
@@ -131,38 +165,12 @@
                 class="absolute inset-0 hidden group-hover:block"
               />
             </a>
-            <!-- Facebook -->
-            <a href="#" class="group relative w-6 h-6">
-              <img
-                src="./images/fb-black.svg"
-                alt="Facebook"
-                class="absolute inset-0 group-hover:hidden"
-              />
-              <img
-                src="./images/fb-hover.svg"
-                alt="Facebook Hover"
-                class="absolute inset-0 hidden group-hover:block"
-              />
-            </a>
-            <!-- YouTube -->
-            <a href="#" class="group relative w-6 h-6">
-              <img
-                src="./images/yt-black.svg"
-                alt="YouTube"
-                class="absolute inset-0 group-hover:hidden"
-              />
-              <img
-                src="./images/yt-hover.svg"
-                alt="YouTube Hover"
-                class="absolute inset-0 hidden group-hover:block"
-              />
-            </a>
           </div>
         </div>
 
         <!-- ✅ Right Map (60%) -->
         <div
-          class="rounded-2xl overflow-hidden shadow-lg md:w-[60%] w-full h-[300px] md:h-auto" data-aos="fade-left"
+          class="rounded-2xl overflow-hidden shadow-lg md:w-[60%] w-full h-[300px] md:h-auto"
         >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27991466286!2d-74.2598656459248!3d40.6976700687711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQxJzUyLjYiTiA3NMKwMTUnMTYuMCJX!5e0!3m2!1sen!2sin!4v1616627313583!5m2!1sen!2sin"
@@ -189,6 +197,12 @@
 
         <!-- Form -->
         <form class="space-y-6">
+          <!-- ✅ Decorative SVG at Bottom Right -->
+          <img
+            src="./images/contact-form-decoration.svg"
+            alt="Decoration"
+            class="absolute bottom-50 left-10 w-32 sm:w-40 md:w-[500px] lg:w-[500px] opacity-100 pointer-events-none select-none"
+          />
           <!-- ✅ First 2 Columns Row -->
           <div class="flex flex-col md:flex-row gap-6">
             <input

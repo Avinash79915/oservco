@@ -5,16 +5,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: "Syne", sans-serif;
   scroll-behavior: smooth;
-
 }
 
 @keyframes slide-carousel {
@@ -30,26 +29,26 @@ html, body {
   animation: slide-carousel 30s linear infinite;
 }
 
-  @keyframes carousel {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+@keyframes carousel {
+  0% {
+    transform: translateX(0%);
   }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-  .animate-carousel {
-    animation: carousel 30s linear infinite;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
+.animate-carousel {
+  animation: carousel 30s linear infinite;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 
-  .scrollbar-hide {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 /* Hide scrollbar for mobile */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
@@ -61,29 +60,29 @@ html, body {
 
 /* Fix for sidebar background when scrolling */
 #sidebar {
-    background-color: white !important;
-    min-height: 100vh !important;
-    height: 100vh !important;
-    position: fixed !important;
-    top: 0 !important;
-    right: 0 !important;
-    z-index: 9999 !important;
+  background-color: white !important;
+  min-height: 100vh !important;
+  height: 100vh !important;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
 }
 
 #overlay {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: 9998 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9998 !important;
 }
 
 /* Prevent body scroll when sidebar is open */
 body.sidebar-open {
-    overflow: hidden !important;
-    position: fixed !important;
-    width: 100% !important;
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
 }
 
 /* Default navbar styling */
@@ -98,12 +97,43 @@ nav {
 nav.shrink {
   padding-top: 0rem;
   padding-bottom: 0rem;
-  height: 95px;
+  height: 85px;
 }
 
-/* Shrink only the logo if desired */
+/* Shrink only the logo on scroll (for larger screens) */
 nav.shrink #logo {
-  height: 16px;
+  height: 0px;
   transition: height 0.3s ease-in-out;
 }
 
+/* ✅ Override shrink for mobile — KEEP logo visible */
+@media (max-width: 767px) {
+  nav.shrink #logo {
+    height: 1rem; /* or whatever size you want */
+    margin-top: 20px;
+  }
+}
+
+#logo2 {
+  display: none; /* Hide logo2 initially */
+}
+
+#SocialMedia {
+  display: flex; /* Show social icons */
+}
+
+nav.shrink #logo2 {
+  display: block; /* Show logo2 when shrunk */
+}
+
+nav.shrink #SocialMedia {
+  display: none; /* Hide social icons when shrunk */
+}
+
+nav.shrink #SocialMedia2 {
+  display: none; /* Hide social icons when shrunk */
+}
+
+nav.shrink #menu-toggle {
+ margin-top: 40px; /* Hide menu toggle when shrunk */
+}

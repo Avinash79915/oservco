@@ -4,11 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       const navbar = document.getElementById("navbar");
       if (navbar) navbar.innerHTML = data;
-      
+
       // Initialize sticky navbar after content is loaded
       initStickyNavbar();
-        initMobileSidebar();
-
+      initMobileSidebar();
     });
 
   const footerPromise = fetch("footer.html")
@@ -32,88 +31,121 @@ document.addEventListener("DOMContentLoaded", () => {
       if (newsletter) newsletter.innerHTML = data;
     });
 
- function initStickyNavbar() {
-  const navbar = document.querySelector('nav');
+  function initStickyNavbar() {
+  const navbar = document.querySelector("nav");
+  const socialIconsDesktop = document.getElementById("desktop-social-icons");
+  const logo = document.getElementById("logo");
   if (!navbar) return;
 
   // Initial styles
-  navbar.style.position = 'fixed';
-  navbar.style.top = '0';
-  navbar.style.left = '0';
-  navbar.style.right = '0';
-  navbar.style.zIndex = '9999';
-  navbar.style.transition = 'all 0.3s ease-in-out';
+  navbar.style.position = "fixed";
+  navbar.style.top = "0";
+  navbar.style.left = "0";
+  navbar.style.right = "0";
+  navbar.style.zIndex = "9999";
+  navbar.style.transition = "all 0.3s ease-in-out";
 
   // Padding so content doesn't jump
-  document.body.style.paddingTop = '120px';
+  document.body.style.paddingTop = "120px";
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > 50) {
-      navbar.classList.add('shrink');
-      navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
-      navbar.style.backdropFilter = 'blur(15px)';
-      navbar.style.webkitBackdropFilter = 'blur(15px)';
-      navbar.style.borderBottom = '1px solid rgba(217, 217, 217, 0.3)';
-      navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+      navbar.classList.add("shrink");
+      navbar.style.backgroundColor = "rgba(255, 255, 255, 0.85)";
+      navbar.style.backdropFilter = "blur(15px)";
+      navbar.style.webkitBackdropFilter = "blur(15px)";
+      navbar.style.borderBottom = "1px solid rgba(217, 217, 217, 0.3)";
+      navbar.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.08)";
+
+      // Hide social icons on desktop
+      if (window.innerWidth >= 768) {  // md and up
+        socialIconsDesktop.style.display = "none";
+
+        // Center the logo's parent <a>
+        logo.parentElement.classList.add("center-logo");
+      }
     } else {
-      navbar.classList.remove('shrink');
-      navbar.style.backgroundColor = 'rgba(255, 255, 255, 1)';
-      navbar.style.backdropFilter = 'none';
-      navbar.style.webkitBackdropFilter = 'none';
-      navbar.style.borderBottom = '0px dotted #D9D9D9';
-      navbar.style.boxShadow = 'none';
+      navbar.classList.remove("shrink");
+      navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
+      navbar.style.backdropFilter = "none";
+      navbar.style.webkitBackdropFilter = "none";
+      navbar.style.borderBottom = "0px dotted #D9D9D9";
+      navbar.style.boxShadow = "none";
+
+      // Show social icons on desktop
+      socialIconsDesktop.style.display = "flex";
+
+      // Remove logo center class
+      logo.parentElement.classList.remove("center-logo");
     }
   });
-}
 
-
-// ✅ MOBILE SIDEBAR FUNCTIONALITY
-function initMobileSidebar() {
-  const menuToggle = document.getElementById('menu-toggle');
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('overlay');
-  const closeSidebar = document.getElementById('close-sidebar');
-
-  if (!menuToggle || !sidebar || !overlay || !closeSidebar) return;
-
-  // Function to open sidebar
-  function openSidebar() {
-    sidebar.classList.remove('translate-x-full');
-    overlay.classList.remove('hidden');
-    // Prevent body scrolling when sidebar is open
-    document.body.style.overflow = 'hidden';
-  }
-
-  // Function to close sidebar
-  function closeSidebarFunc() {
-    sidebar.classList.add('translate-x-full');
-    overlay.classList.add('hidden');
-    // Restore body scrolling when sidebar is closed
-    document.body.style.overflow = 'auto';
-  }
-
-  // Event listeners
-  menuToggle.addEventListener('click', openSidebar);
-  closeSidebar.addEventListener('click', closeSidebarFunc);
-  overlay.addEventListener('click', closeSidebarFunc);
-
-  // Close sidebar when clicking on navigation links
-  const sidebarLinks = sidebar.querySelectorAll('a');
-  sidebarLinks.forEach(link => {
-    link.addEventListener('click', closeSidebarFunc);
-  });
-
-  // Close sidebar on window resize (when switching to desktop)
+  // Also handle window resize to reset styles if needed
   window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) { // md breakpoint
-      closeSidebarFunc();
+    if (window.scrollY > 50 && window.innerWidth >= 768) {
+      socialIconsDesktop.style.display = "none";
+      logo.parentElement.classList.add("center-logo");
+    } else {
+      socialIconsDesktop.style.display = "flex";
+      logo.parentElement.classList.remove("center-logo");
     }
   });
 }
 
-  Promise.all([navbarPromise, footerPromise, blogPromise, newsletterPromise]).then(() => {
+
+  // ✅ MOBILE SIDEBAR FUNCTIONALITY
+  function initMobileSidebar() {
+    const menuToggle = document.getElementById("menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const closeSidebar = document.getElementById("close-sidebar");
+
+    if (!menuToggle || !sidebar || !overlay || !closeSidebar) return;
+
+    // Function to open sidebar
+    function openSidebar() {
+      sidebar.classList.remove("translate-x-full");
+      overlay.classList.remove("hidden");
+      // Prevent body scrolling when sidebar is open
+      document.body.style.overflow = "hidden";
+    }
+
+    // Function to close sidebar
+    function closeSidebarFunc() {
+      sidebar.classList.add("translate-x-full");
+      overlay.classList.add("hidden");
+      // Restore body scrolling when sidebar is closed
+      document.body.style.overflow = "auto";
+    }
+
+    // Event listeners
+    menuToggle.addEventListener("click", openSidebar);
+    closeSidebar.addEventListener("click", closeSidebarFunc);
+    overlay.addEventListener("click", closeSidebarFunc);
+
+    // Close sidebar when clicking on navigation links
+    const sidebarLinks = sidebar.querySelectorAll("a");
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", closeSidebarFunc);
+    });
+
+    // Close sidebar on window resize (when switching to desktop)
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        // md breakpoint
+        closeSidebarFunc();
+      }
+    });
+  }
+
+  Promise.all([
+    navbarPromise,
+    footerPromise,
+    blogPromise,
+    newsletterPromise,
+  ]).then(() => {
     AOS.init({ once: true, duration: 2000 });
 
     const menuToggle = document.getElementById("menu-toggle");
@@ -159,13 +191,17 @@ function initMobileSidebar() {
         titleEl.innerText = currentSlide.getAttribute("data-title") || "";
         subtitleEl.innerHTML = `
           ${currentSlide.getAttribute("data-subtitle") || ""}
-          <span class="text-[#EF3A6B]">${currentSlide.getAttribute("data-highlight") || ""}</span> Gifts
+          <span class="text-[#EF3A6B]">${
+            currentSlide.getAttribute("data-highlight") || ""
+          }</span> Gifts
         `;
         descEl.innerText = currentSlide.getAttribute("data-desc") || "";
       }
 
       function updateSlidePosition(withTransition = true) {
-        track.style.transition = withTransition ? "transform 0.7s ease-in-out" : "none";
+        track.style.transition = withTransition
+          ? "transform 0.7s ease-in-out"
+          : "none";
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
         updateText();
       }
@@ -203,12 +239,20 @@ function initMobileSidebar() {
     // ✅ POPUP FIX
     const contactModal = document.getElementById("contact-modal");
     const getInTouchBtn = document.getElementById("get-in-touch-btn");
-    const getInTouchBtnSidebar = document.getElementById("get-in-touch-btn-sidebar");
+    const getInTouchBtnSidebar = document.getElementById(
+      "get-in-touch-btn-sidebar"
+    );
     const closeModal = document.getElementById("close-modal");
 
-    getInTouchBtn?.addEventListener("click", () => contactModal?.classList.remove("hidden"));
-    getInTouchBtnSidebar?.addEventListener("click", () => contactModal?.classList.remove("hidden"));
-    closeModal?.addEventListener("click", () => contactModal?.classList.add("hidden"));
+    getInTouchBtn?.addEventListener("click", () =>
+      contactModal?.classList.remove("hidden")
+    );
+    getInTouchBtnSidebar?.addEventListener("click", () =>
+      contactModal?.classList.remove("hidden")
+    );
+    closeModal?.addEventListener("click", () =>
+      contactModal?.classList.add("hidden")
+    );
     contactModal?.addEventListener("click", (e) => {
       if (e.target === contactModal) contactModal.classList.add("hidden");
     });
@@ -250,7 +294,9 @@ function initMobileSidebar() {
       carousel.style.transform = `translateX(-${index * 100}%)`;
 
       function moveSlide(withTransition = true) {
-        carousel.style.transition = withTransition ? "transform 0.7s ease-in-out" : "none";
+        carousel.style.transition = withTransition
+          ? "transform 0.7s ease-in-out"
+          : "none";
         carousel.style.transform = `translateX(-${index * 100}%)`;
       }
 

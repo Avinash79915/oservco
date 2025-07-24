@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // Initialize sticky navbar after content is loaded
       initStickyNavbar();
+        initMobileSidebar();
+
     });
 
   const footerPromise = fetch("footer.html")
@@ -30,42 +32,86 @@ document.addEventListener("DOMContentLoaded", () => {
       if (newsletter) newsletter.innerHTML = data;
     });
 
-  // ✅ STICKY NAVBAR FUNCTION
-  function initStickyNavbar() {
-    const navbar = document.querySelector('nav');
-    if (!navbar) return;
+ // ✅ STICKY NAVBAR FUNCTION
+function initStickyNavbar() {
+  const navbar = document.querySelector('nav');
+  if (!navbar) return;
 
-    // Make navbar fixed positioned
-    navbar.style.position = 'fixed';
-    navbar.style.top = '0';
-    navbar.style.left = '0';
-    navbar.style.right = '0';
-    navbar.style.zIndex = '9999';
-    navbar.style.transition = 'all 0.3s ease-in-out';
+  // Make navbar fixed positioned
+  navbar.style.position = 'fixed';
+  navbar.style.top = '0';
+  navbar.style.left = '0';
+  navbar.style.right = '0';
+  navbar.style.zIndex = '9999';
+  navbar.style.transition = 'all 0.3s ease-in-out';
 
-    // Add padding to body to prevent content jump
-    document.body.style.paddingTop =  '120px';
+  // Add padding to body to prevent content jump
+  document.body.style.paddingTop = '120px';
 
-    window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > 50) {
-        // When scrolled down - add glassmorphism effect
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
-        navbar.style.backdropFilter = 'blur(15px)';
-        navbar.style.webkitBackdropFilter = 'blur(15px)';
-        navbar.style.borderBottom = '1px solid rgba(217, 217, 217, 0.3)';
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
-      } else {
-        // When at top - restore original appearance
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 1)';
-        navbar.style.backdropFilter = 'none';
-        navbar.style.webkitBackdropFilter = 'none';
-        navbar.style.borderBottom = '0px dotted #D9D9D9';
-        navbar.style.boxShadow = 'none';
-      }
-    });
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > 50) {
+      // When scrolled down - add glassmorphism effect
+      navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
+      navbar.style.backdropFilter = 'blur(15px)';
+      navbar.style.webkitBackdropFilter = 'blur(15px)';
+      navbar.style.borderBottom = '1px solid rgba(217, 217, 217, 0.3)';
+      navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+    } else {
+      // When at top - restore original appearance
+      navbar.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+      navbar.style.backdropFilter = 'none';
+      navbar.style.webkitBackdropFilter = 'none';
+      navbar.style.borderBottom = '0px dotted #D9D9D9';
+      navbar.style.boxShadow = 'none';
+    }
+  });
+}
+
+// ✅ MOBILE SIDEBAR FUNCTIONALITY
+function initMobileSidebar() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  const closeSidebar = document.getElementById('close-sidebar');
+
+  if (!menuToggle || !sidebar || !overlay || !closeSidebar) return;
+
+  // Function to open sidebar
+  function openSidebar() {
+    sidebar.classList.remove('translate-x-full');
+    overlay.classList.remove('hidden');
+    // Prevent body scrolling when sidebar is open
+    document.body.style.overflow = 'hidden';
   }
+
+  // Function to close sidebar
+  function closeSidebarFunc() {
+    sidebar.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+    // Restore body scrolling when sidebar is closed
+    document.body.style.overflow = 'auto';
+  }
+
+  // Event listeners
+  menuToggle.addEventListener('click', openSidebar);
+  closeSidebar.addEventListener('click', closeSidebarFunc);
+  overlay.addEventListener('click', closeSidebarFunc);
+
+  // Close sidebar when clicking on navigation links
+  const sidebarLinks = sidebar.querySelectorAll('a');
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', closeSidebarFunc);
+  });
+
+  // Close sidebar on window resize (when switching to desktop)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) { // md breakpoint
+      closeSidebarFunc();
+    }
+  });
+}
 
   Promise.all([navbarPromise, footerPromise, blogPromise, newsletterPromise]).then(() => {
     AOS.init({ once: true, duration: 2000 });

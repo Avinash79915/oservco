@@ -32,12 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (newsletter) newsletter.innerHTML = data;
     });
 
- // ✅ STICKY NAVBAR FUNCTION
-function initStickyNavbar() {
+ function initStickyNavbar() {
   const navbar = document.querySelector('nav');
   if (!navbar) return;
 
-  // Make navbar fixed positioned
+  // Initial styles
   navbar.style.position = 'fixed';
   navbar.style.top = '0';
   navbar.style.left = '0';
@@ -45,21 +44,21 @@ function initStickyNavbar() {
   navbar.style.zIndex = '9999';
   navbar.style.transition = 'all 0.3s ease-in-out';
 
-  // Add padding to body to prevent content jump
+  // Padding so content doesn't jump
   document.body.style.paddingTop = '120px';
 
   window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
-    
+
     if (currentScrollY > 50) {
-      // When scrolled down - add glassmorphism effect
+      navbar.classList.add('shrink');
       navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
       navbar.style.backdropFilter = 'blur(15px)';
       navbar.style.webkitBackdropFilter = 'blur(15px)';
       navbar.style.borderBottom = '1px solid rgba(217, 217, 217, 0.3)';
       navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
     } else {
-      // When at top - restore original appearance
+      navbar.classList.remove('shrink');
       navbar.style.backgroundColor = 'rgba(255, 255, 255, 1)';
       navbar.style.backdropFilter = 'none';
       navbar.style.webkitBackdropFilter = 'none';
@@ -68,6 +67,7 @@ function initStickyNavbar() {
     }
   });
 }
+
 
 // ✅ MOBILE SIDEBAR FUNCTIONALITY
 function initMobileSidebar() {
